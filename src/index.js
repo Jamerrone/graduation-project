@@ -8,7 +8,7 @@ const {getFilePath} = require('./lib/inquirer');
 const {printLn} = require('./lib/utils');
 
 const run = async () => {
-  if (argv.f || argv.file) {
+  if (argv.i || argv.input) {
     const filePath = argv.f || argv.file;
     if (path.extname(filePath) === '.css') {
       const fileString = readFile(filePath);
