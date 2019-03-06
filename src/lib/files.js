@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const fs = require('fs');
 const glob = require('glob');
 
@@ -6,7 +7,11 @@ const findFiles = (fileType) => {
 };
 
 const readFile = (filePath) => {
-  return fs.readFileSync(filePath, 'utf8');
+  if (fs.existsSync(filePath)) {
+    return fs.readFileSync(filePath, 'utf8');
+  } else {
+    return chalk.red(`ERROR: "${filePath}" does not exist.`);
+  }
 };
 
 module.exports = {
