@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A CSS Support Validator.",
   "main": "./src/index.js",
+  "bin": {
+    "firefly": "./src/index.js"
+  },
   "scripts": {
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
     "start": "node ./src/index.js"

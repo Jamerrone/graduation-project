@@ -1,32 +1,29 @@
-const argv = require('minimist')(process.argv.slice(2));
+#!/usr/bin/env node
 const chalk = require('chalk');
-const clear = require('clear');
-const path = require('path');
+const minimist = require('minimist');
 
-const {findFiles, readFile} = require('./lib/files');
-const {getFilePath} = require('./lib/inquirer');
-const {printLn} = require('./lib/utils');
+const {printLn} = require('./libraries/utils');
 
-const run = async () => {
-  if (argv.i || argv.input) {
-    const filePath = argv.f || argv.file;
-    if (path.extname(filePath) === '.css') {
-      const fileString = readFile(filePath);
-      printLn(fileString, true);
-    } else {
-      printLn(chalk.red(`ERROR: "${filePath}" is not a valid CSS file.`), true);
-    }
+(() => {
+  const args = minimist(process.argv.slice(2), {
+    alias: {i: 'input', v: 'version', h: 'help'},
+    boolean: ['version', 'help'],
+    string: ['input'],
+    unknown(arg) {
+      printLn(
+          chalk.red(
+              `ERROR: "${arg}" is not a valid option/command. See "firefly --help".`
+          )
+      );
+      process.exit();
+    },
+  });
+
+  if (args.input) {
+    require('./commands/input')(args);
+  } else if (args.version) {
+    require('./commands/version')();
   } else {
-    const files = findFiles('css');
-    if (files.length) {
-      const {filePath} = await getFilePath(files);
-      const fileString = readFile(filePath);
-      printLn(fileString, true);
-    } else {
-      printLn(chalk.red('ERROR: Could not find any CSS file.'), true);
-    }
+    require('./commands/primary')();
   }
-};
-
-clear();
-run();
+})();
