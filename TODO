@@ -1,7 +1,7 @@
 Sprint 1:
   Load CSS File:
-    ☐ Scan local directories for *.css files.
-      ☐ Read the selected file.
+    ✔ Scan local directories for *.css files. @started(19-03-06 10:39) @done(19-03-06 11:04) @lasted(25m23s)
+      ☐ Read the selected file. @started(19-03-06 11:04)
     ☐ Create a "-f & --file" flag for direct user input.
       ☐ Read user submitted file.
   
