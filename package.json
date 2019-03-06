@@ -1,0 +1,30 @@
+{
+  "name": "graduation-project",
+  "version": "1.0.0",
+  "description": "A CSS Support Validator.",
+  "main": "./src/index.js",
+  "scripts": {
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamerrone/graduation-project.git"
+  },
+  "keywords": [
+    "browser-compatibility",
+    "css",
+    "validation"
+  ],
+  "author": "James Peter Perrone Jefferies",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Jamerrone/graduation-project/issues"
+  },
+  "homepage": "https://github.com/Jamerrone/graduation-project#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-google": "^0.12.0"
+  }
+}

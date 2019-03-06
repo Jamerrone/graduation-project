@@ -1,0 +1,22 @@
+Sprint 1:
+  Load CSS File:
+    ☐ Scan local directories for *.css files.
+      ☐ Read the selected file.
+    ☐ Create a "-f & --file" flag for direct user input.
+      ☐ Read user submitted file.
+  
+  Parse Loaded CSS File:
+    ☐ Parse loaded CSS file.
+      Use an existing CSS parser, do NOT waste time.
+
+  Check for Browser Support:
+    ☐ Keep track of all unsupported CSS properties.
+      ☐ Check every CSS property for its browser support.
+        Use a hardcoded browserscope for now.
+
+  Display Unsupported CSS Properties:
+    ☐ Display unsupported CSS properties.
+      ☐ Generate a table containing every feedback message.
+        ☐ Generate a feedback message for each unsupported CSS property.
+          | Location (Ln, Col) | Property Name | Unsupported By |
+

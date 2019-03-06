@@ -1,2 +1,3 @@
-# graduation-project
+# Graduation Project
+
 A CSS Support Validator.
