@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-const chalk = require('chalk');
 const minimist = require('minimist');
 
-const {printLn} = require('./libraries/utils');
+const {printEr} = require('./libraries/utils');
 
 (() => {
   const args = minimist(process.argv.slice(2), {
@@ -10,11 +9,7 @@ const {printLn} = require('./libraries/utils');
     boolean: ['version', 'help'],
     string: ['input'],
     unknown(arg) {
-      printLn(
-          chalk.red(
-              `ERROR: "${arg}" is not a valid option/command. See "firefly --help".`
-          )
-      );
+      printEr(`"${arg}" is not a valid option/command. See "firefly --help".`);
       process.exit();
     },
   });

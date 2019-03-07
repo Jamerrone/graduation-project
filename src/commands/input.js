@@ -1,8 +1,7 @@
-const chalk = require('chalk');
 const path = require('path');
 
 const {readFile} = require('../libraries/files');
-const {printLn} = require('../libraries/utils');
+const {printEr, printLn} = require('../libraries/utils');
 
 module.exports = (args) => {
   const filePath = args.input;
@@ -10,6 +9,6 @@ module.exports = (args) => {
     const fileString = readFile(filePath);
     printLn(fileString, true);
   } else {
-    printLn(chalk.red(`ERROR: "${filePath}" is not a valid CSS file.`), true);
+    printEr(`"${filePath}" is not a valid CSS file.`);
   }
 };

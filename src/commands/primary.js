@@ -1,9 +1,8 @@
-const chalk = require('chalk');
 const clear = require('clear');
 
 const {findFiles, readFile} = require('../libraries/files');
 const {getFilePath} = require('../libraries/inquirer');
-const {printLn} = require('../libraries/utils');
+const {printEr, printLn} = require('../libraries/utils');
 
 module.exports = async () => {
   const files = findFiles('css');
@@ -14,6 +13,6 @@ module.exports = async () => {
     const fileString = readFile(filePath);
     printLn(fileString, true);
   } else {
-    printLn(chalk.red('ERROR: Could not find any CSS file.'), true);
+    printEr('Could not find any CSS file.');
   }
 };
