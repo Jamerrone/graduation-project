@@ -4,7 +4,7 @@ const glob = require('glob');
 const {printEr} = require('./utils');
 
 const findFiles = (fileType = '') => {
-  return glob.sync(`**/*.${fileType}`, {ignore: ['node_modules/**']});
+  return glob.sync(`**/*.${fileType}`, {ignore: ['**/node_modules/**']});
 };
 
 const readFile = (filePath = '') => {
