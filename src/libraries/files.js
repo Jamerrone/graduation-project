@@ -3,11 +3,11 @@ const glob = require('glob');
 
 const {printEr} = require('./utils');
 
-const findFiles = (fileType) => {
+const findFiles = (fileType = '') => {
   return glob.sync(`**/*.${fileType}`, {ignore: ['node_modules/**']});
 };
 
-const readFile = (filePath) => {
+const readFile = (filePath = '') => {
   if (fs.existsSync(filePath)) {
     return fs.readFileSync(filePath, 'utf8');
   } else {

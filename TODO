@@ -6,7 +6,7 @@ Sprint 1:
       ✔ Read user submitted file. @started(19-03-06 11:49) @done(19-03-06 13:00) @lasted(1h11m28s)
   
   Parse Loaded CSS File:
-    ☐ Parse loaded CSS file.
+    ✔ Parse loaded CSS file. @started(19-03-07 11:04) @done(19-03-07 12:08) @lasted(1h4m36s)
       Use an existing CSS parser, do NOT waste time.
 
   Check for Browser Support:
