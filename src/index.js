@@ -27,6 +27,8 @@ const {printEr} = require('./libraries/utils');
     require('./commands/input')(args);
   } else if (args.version) {
     require('./commands/version')();
+  } else if (args.help) {
+    require('./commands/help')();
   } else {
     require('./commands/primary')();
   }
