@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const minimist = require('minimist');
+const stringSimilarity = require('string-similarity');
 
 const {printEr} = require('./libraries/utils');
 
@@ -9,7 +10,16 @@ const {printEr} = require('./libraries/utils');
     boolean: ['version', 'help'],
     string: ['input'],
     unknown(arg) {
-      printEr(`"${arg}" is not a valid option/command. See "firefly --help".`);
+      printEr([
+        `"${arg}" is not a valid option/command. See "firefly --help".`,
+        `Did you mean: ${
+          stringSimilarity.findBestMatch(arg, [
+            '--input',
+            '--version',
+            '--help',
+          ]).bestMatch.target
+        }?`,
+      ]);
     },
   });
 
