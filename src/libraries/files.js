@@ -1,10 +1,14 @@
+const fg = require('fast-glob');
 const fs = require('fs');
-const glob = require('glob');
+const ora = require('ora');
 
 const {printEr} = require('./utils');
 
-const findFiles = (fileType = '') => {
-  return glob.sync(`**/*.${fileType}`, {ignore: ['**/node_modules/**']});
+const findFiles = async (fileType = '') => {
+  const spinner = ora('Searching for CSS files...').start();
+  const files = await fg([`**/*.${fileType}`, '!**/node_modules/**']);
+  spinner.stop();
+  return files;
 };
 
 const readFile = (filePath = '') => {

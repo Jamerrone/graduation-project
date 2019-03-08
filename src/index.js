@@ -10,7 +10,6 @@ const {printEr} = require('./libraries/utils');
     string: ['input'],
     unknown(arg) {
       printEr(`"${arg}" is not a valid option/command. See "firefly --help".`);
-      process.exit();
     },
   });
 

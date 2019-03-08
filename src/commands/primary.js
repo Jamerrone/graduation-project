@@ -6,13 +6,13 @@ const {getFilePath} = require('../libraries/inquirer');
 const {printEr, printLn} = require('../libraries/utils');
 
 module.exports = async () => {
-  const files = findFiles('css');
+  const files = await findFiles('css');
 
   if (files.length) {
     clear();
     const {filePath} = await getFilePath(files);
     const fileString = readFile(filePath);
-    printLn(JSON.stringify(parseCSS(fileString, filePath), null, 2));
+    printLn(parseCSS(fileString, filePath));
   } else {
     printEr('Could not find any CSS file.');
   }

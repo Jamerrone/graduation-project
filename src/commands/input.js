@@ -8,7 +8,7 @@ module.exports = (args = {}) => {
   const filePath = args.input;
   if (path.extname(filePath) === '.css') {
     const fileString = readFile(filePath);
-    printLn(JSON.stringify(parseCSS(fileString, filePath), null, 2));
+    printLn(parseCSS(fileString, filePath));
   } else {
     printEr(`"${filePath}" is not a valid CSS file.`);
   }
