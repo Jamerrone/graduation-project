@@ -1,6 +1,11 @@
 const css = require('css');
 const ora = require('ora');
 
+const getCSSRules = (cssObject = {}) => {
+  const {source, rules} = cssObject.stylesheet;
+  return {source, rules: rules.filter((rule = {}) => rule.type === 'rule')};
+};
+
 const parseCSS = (fileString = '', filePath = '') => {
   const spinner = ora('Parsing CSS file...').start();
   const parsedCSS = css.parse(fileString, {source: filePath});
@@ -16,6 +21,7 @@ const stringifyCSS = (cssObject = {}) => {
 };
 
 module.exports = {
+  getCSSRules,
   parseCSS,
   stringifyCSS,
 };
