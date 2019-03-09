@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 
-const getFilePath = (files = []) => {
+const getFilePath = (files) => {
   const question = {
     type: 'list',
     name: 'filePath',

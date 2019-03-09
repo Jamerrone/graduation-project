@@ -1,27 +1,36 @@
-const css = require('css');
+const csstree = require('css-tree');
 const ora = require('ora');
 
-const getCSSRules = (cssObject = {}) => {
-  const {source, rules} = cssObject.stylesheet;
-  return {source, rules: rules.filter((rule = {}) => rule.type === 'rule')};
+const generateCSS = (cssNode) => {
+  const spinner = ora('Generating CSS from node...').start();
+  const generatedCSS = csstree.generate(cssNode);
+  spinner.stop();
+  return generatedCSS;
 };
 
-const parseCSS = (fileString = '', filePath = '') => {
+const getCSSDeclarations = (cssNode) => {
+  const declarations = [];
+  csstree.walk(cssNode, {
+    visit: 'Declaration',
+    enter(node) {
+      declarations.push(node);
+    },
+  });
+  return declarations;
+};
+
+const parseCSS = (fileString) => {
   const spinner = ora('Parsing CSS file...').start();
-  const parsedCSS = css.parse(fileString, {source: filePath});
+  const parsedCSS = csstree.parse(fileString, {
+    parseValue: false,
+    positions: true,
+  });
   spinner.stop();
   return parsedCSS;
 };
 
-const stringifyCSS = (cssObject = {}) => {
-  const spinner = ora('Stringifying CSS file...').start();
-  const stringifiedCSS = css.stringify(cssObject);
-  spinner.stop();
-  return stringifiedCSS;
-};
-
 module.exports = {
-  getCSSRules,
+  generateCSS,
+  getCSSDeclarations,
   parseCSS,
-  stringifyCSS,
 };

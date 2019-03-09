@@ -1,6 +1,6 @@
 const clear = require('clear');
 
-const {getCSSRules, parseCSS} = require('../libraries/css');
+const {getCSSDeclarations, parseCSS} = require('../libraries/css');
 const {findFiles, readFile} = require('../libraries/files');
 const {getFilePath} = require('../libraries/inquirer');
 const {printEr, printLn} = require('../libraries/utils');
@@ -12,8 +12,8 @@ module.exports = async () => {
     clear();
     const {filePath} = await getFilePath(files);
     const fileString = readFile(filePath);
-    const parsedCSS = parseCSS(fileString, filePath);
-    printLn(getCSSRules(parsedCSS));
+    const parsedCSS = parseCSS(fileString);
+    printLn(getCSSDeclarations(parsedCSS));
   } else {
     printEr('Could not find any CSS file.');
   }

@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 const clear = require('clear');
 
-const printEr = (errorMessage = '', exitProgram = true) => {
+const printEr = (errorMessage, exitProgram = true) => {
   Array.isArray(errorMessage)
     ? errorMessage.forEach((message, index) => {
         index === 0
@@ -12,7 +12,7 @@ const printEr = (errorMessage = '', exitProgram = true) => {
   if (exitProgram) process.exit();
 };
 
-const printLn = (message = '', clearConsole = false) => {
+const printLn = (message, clearConsole = false) => {
   if (clearConsole) clear();
   Array.isArray(message)
     ? message.forEach((msg) => console.log(msg))

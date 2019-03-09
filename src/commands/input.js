@@ -1,15 +1,15 @@
 const path = require('path');
 
-const {getCSSRules, parseCSS} = require('../libraries/css');
+const {getCSSDeclarations, parseCSS} = require('../libraries/css');
 const {readFile} = require('../libraries/files');
 const {printEr, printLn} = require('../libraries/utils');
 
-module.exports = (args = {}) => {
+module.exports = (args) => {
   const filePath = args.input;
   if (path.extname(filePath) === '.css') {
     const fileString = readFile(filePath);
-    const parsedCSS = parseCSS(fileString, filePath);
-    printLn(getCSSRules(parsedCSS));
+    const parsedCSS = parseCSS(fileString);
+    printLn(getCSSDeclarations(parsedCSS));
   } else {
     printEr(`"${filePath}" is not a valid CSS file.`);
   }

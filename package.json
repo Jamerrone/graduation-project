@@ -28,7 +28,7 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
-    "css": "^2.2.4",
+    "css-tree": "^1.0.0-alpha.29",
     "fast-glob": "^2.2.6",
     "inquirer": "^6.2.2",
     "minimist": "^1.2.0",
