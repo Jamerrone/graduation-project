@@ -11,7 +11,7 @@ Sprint 1:
 
   Check for Browser Support:
     ☐ Keep track of all unsupported CSS properties.
-      ☐ Check every CSS property for its browser support.
+      ✔ Check every CSS property for its browser support. @started(19-03-10 20:41) @done(19-03-11 12:12) @lasted(15h31m29s)
         Use a hardcoded browserscope for now.
 
   Display Unsupported CSS Properties:
