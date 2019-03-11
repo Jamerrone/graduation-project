@@ -1,6 +1,6 @@
 const clear = require('clear');
 
-const {checkBrowserSupport} = require('../libraries/browser-compat');
+const {checkBrowserSupport} = require('../libraries/compat');
 const {getCSSDeclarations, parseCSS} = require('../libraries/css');
 const {findFiles, readFile} = require('../libraries/files');
 const {getFilePath} = require('../libraries/inquirer');
@@ -17,11 +17,11 @@ module.exports = async () => {
     const cssDeclarations = getCSSDeclarations(parsedCSS);
     printLn(
         checkBrowserSupport(cssDeclarations, {
-          chrome: 70,
-          edge: 17,
-          firefox: 65,
-          ie: 11,
-          safari: 12,
+          chrome: 60,
+          edge: 15,
+          firefox: 60,
+          ie: 10,
+          safari: 10,
         })
     );
   } else {

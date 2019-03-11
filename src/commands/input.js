@@ -1,6 +1,6 @@
 const path = require('path');
 
-const {checkBrowserSupport} = require('../libraries/browser-compat');
+const {checkBrowserSupport} = require('../libraries/compat');
 const {getCSSDeclarations, parseCSS} = require('../libraries/css');
 const {readFile} = require('../libraries/files');
 const {printEr, printLn} = require('../libraries/utils');
@@ -13,11 +13,11 @@ module.exports = (args) => {
     const cssDeclarations = getCSSDeclarations(parsedCSS);
     printLn(
         checkBrowserSupport(cssDeclarations, {
-          chrome: 70,
-          edge: 17,
-          firefox: 65,
-          ie: 11,
-          safari: 12,
+          chrome: 60,
+          edge: 15,
+          firefox: 60,
+          ie: 10,
+          safari: 10,
         })
     );
   } else {

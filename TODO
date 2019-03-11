@@ -10,7 +10,7 @@ Sprint 1:
       Use an existing CSS parser, do NOT waste time.
 
   Check for Browser Support:
-    ☐ Keep track of all unsupported CSS properties.
+    ✔ Keep track of all unsupported CSS properties. @started(19-03-11 12:12) @done(19-03-11 18:00) @lasted(5h48m50s)
       ✔ Check every CSS property for its browser support. @started(19-03-10 20:41) @done(19-03-11 12:12) @lasted(15h31m29s)
         Use a hardcoded browserscope for now.
 
@@ -19,4 +19,8 @@ Sprint 1:
       ☐ Generate a table containing every feedback message.
         ☐ Generate a feedback message for each unsupported CSS property.
           | Location (Ln, Col) | Property Name | Unsupported By |
+
+Others/Bugs:
+  ☐ Write some logic to get the property's context. (libraries/compat[41])
+    E.g "justify-content" needs a ctx of "flex_context" or "grid_context".
 
