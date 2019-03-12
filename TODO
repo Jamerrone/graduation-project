@@ -15,8 +15,8 @@ Sprint 1:
         Use a hardcoded browserscope for now.
 
   Display Unsupported CSS Properties:
-    ☐ Display unsupported CSS properties.
-      ☐ Generate a table containing every feedback message.
+    ✔ Display unsupported CSS properties. @started(19-03-12 11:11) @done(19-03-12 15:25) @lasted(4h14m7s)
+      ✔ Generate a table containing every feedback message. @started(19-03-12 11:32) @done(19-03-12 15:24) @lasted(3h52m47s)
         ✔ Generate a feedback message for each unsupported CSS property. @started(19-03-12 11:11) @done(19-03-12 11:32) @lasted(21m39s)
           | Location (Ln, Col) | Property Name | Unsupported By |
 

@@ -30,6 +30,6 @@ const {printEr} = require('./libraries/utils');
   } else if (args.help) {
     require('./commands/help')();
   } else {
-    require('./commands/primary')();
+    require('./commands')();
   }
 })();
