@@ -1,5 +1,6 @@
 const clear = require('clear');
 
+const {checkBrowserSupport} = require('../libraries/compat');
 const {getCSSDeclarations, parseCSS} = require('../libraries/css');
 const {findFiles, readFile} = require('../libraries/files');
 const {getFilePath} = require('../libraries/inquirer');
@@ -13,7 +14,16 @@ module.exports = async () => {
     const {filePath} = await getFilePath(files);
     const fileString = readFile(filePath);
     const parsedCSS = parseCSS(fileString);
-    printLn(getCSSDeclarations(parsedCSS));
+    const cssDeclarations = getCSSDeclarations(parsedCSS);
+    printLn(
+        checkBrowserSupport(cssDeclarations, {
+          chrome: 60,
+          edge: 15,
+          firefox: 60,
+          ie: 10,
+          safari: 10,
+        })
+    );
   } else {
     printEr('Could not find any CSS file.');
   }
