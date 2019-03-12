@@ -4,12 +4,14 @@ const {printLn} = require('../libraries/utils');
 
 module.exports = () => {
   printLn([
-    `${chalk.bold('Usage:')} firefly`,
+    `${chalk.bold('Usage:')} firefly ${chalk.yellow('or')}`,
     `       firefly [${chalk.cyan('-i | --input <path>')}] [${chalk.cyan(
-        '-h | --help'
-    )}] [${chalk.cyan('-v | --version')}]`,
+        '-e | --export'
+    )}] [${chalk.cyan('-h | --help')}]
+       [${chalk.cyan('-v | --version')}]`,
     '',
     `${chalk.bold('Flags:')}`,
+    `   ${chalk.cyan('-e, --export')}         Export the generated report.`,
     `   ${chalk.cyan('-h, --help')}           Output usage information.`,
     `   ${chalk.cyan('-v, --version')}        Output the version number.`,
     '',

@@ -1,7 +1,7 @@
 const {table} = require('table');
 const chalk = require('chalk');
 
-const generateFeedback = (supportData) => {
+const generateReport = (supportData) => {
   const tableHeading = [
     chalk.bold.yellow('Location'),
     chalk.bold.yellow('Property Name'),
@@ -16,7 +16,7 @@ const generateFeedback = (supportData) => {
 
   return tableData.length
     ? table(tableData)
-    : chalk.green('Your code is well supported, keep it up!');
+    : chalk.green('Congratulations! No issues were found.');
 };
 
 const generateTableRow = ({property, location, notSupported}) => {
@@ -28,5 +28,5 @@ const generateTableRow = ({property, location, notSupported}) => {
 };
 
 module.exports = {
-  generateFeedback,
+  generateReport,
 };
