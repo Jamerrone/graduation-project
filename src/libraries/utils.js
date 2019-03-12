@@ -1,5 +1,4 @@
 const chalk = require('chalk');
-const clear = require('clear');
 
 const printEr = (errorMessage, exitProgram = true) => {
   Array.isArray(errorMessage)
@@ -12,8 +11,7 @@ const printEr = (errorMessage, exitProgram = true) => {
   if (exitProgram) process.exit();
 };
 
-const printLn = (message, clearConsole = false) => {
-  if (clearConsole) clear();
+const printLn = (message) => {
   Array.isArray(message)
     ? message.forEach((msg) => console.log(msg))
     : console.log(message);

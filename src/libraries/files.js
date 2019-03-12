@@ -12,11 +12,9 @@ const findFiles = async (fileType) => {
 };
 
 const readFile = (filePath) => {
-  if (fs.existsSync(filePath)) {
-    return fs.readFileSync(filePath, 'utf8');
-  } else {
-    printEr(`"${filePath}" does not exist.`);
-  }
+  return fs.existsSync(filePath)
+    ? fs.readFileSync(filePath, 'utf8')
+    : printEr(`"${filePath}" does not exist.`);
 };
 
 module.exports = {
