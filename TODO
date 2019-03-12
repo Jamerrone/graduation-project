@@ -17,7 +17,7 @@ Sprint 1:
   Display Unsupported CSS Properties:
     ☐ Display unsupported CSS properties.
       ☐ Generate a table containing every feedback message.
-        ☐ Generate a feedback message for each unsupported CSS property.
+        ✔ Generate a feedback message for each unsupported CSS property. @started(19-03-12 11:11) @done(19-03-12 11:32) @lasted(21m39s)
           | Location (Ln, Col) | Property Name | Unsupported By |
 
 Others/Bugs:
