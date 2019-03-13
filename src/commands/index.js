@@ -1,3 +1,4 @@
+process.stdout.write('Loading...');
 const shared = require('./shared');
 const {findFiles} = require('../libraries/files');
 const {getFilePath} = require('../libraries/inquirer');

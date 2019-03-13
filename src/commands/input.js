@@ -1,3 +1,4 @@
+process.stdout.write('Loading...');
 const path = require('path');
 
 const shared = require('./shared');
