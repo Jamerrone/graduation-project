@@ -12,10 +12,11 @@ const browserscope = {
   safari: 10,
 };
 
-module.exports = (filePath) => {
+module.exports = (filePath, args) => {
   const fileString = readFile(filePath);
   const parsedCSS = parseCSS(fileString);
   const cssDeclarations = getCSSDeclarations(parsedCSS);
   const browserSupport = checkBrowserSupport(cssDeclarations, browserscope);
-  printLn(generateReport(browserSupport));
+  const generatedReport = generateReport(browserSupport, args);
+  printLn(generatedReport);
 };

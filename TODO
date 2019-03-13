@@ -21,7 +21,7 @@ Sprint 1:
           | Location (Ln, Col) | Property Name | Unsupported By |
 
 Others/Bugs:
-  ☐ Allow users to export their generated report.
+  ✔ Allow users to export their generated report. @done(19-03-13 13:11)
   ☐ Add more general information, feedback, and other text content.
   ☐ Write some logic to get the property's context. (libraries/compat[41])
     E.g "justify-content" needs a ctx of "flex_context" or "grid_context".

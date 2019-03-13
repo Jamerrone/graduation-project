@@ -1,7 +1,9 @@
 const {table} = require('table');
 const chalk = require('chalk');
 
-const generateReport = (supportData) => {
+const {writeFile} = require('./files');
+
+const generateReport = (supportData, args) => {
   const tableHeading = [
     chalk.bold.yellow('Location'),
     chalk.bold.yellow('Property Name'),
@@ -14,9 +16,13 @@ const generateReport = (supportData) => {
     return acc;
   }, []);
 
-  return tableData.length
-    ? table(tableData)
-    : chalk.green('Congratulations! No issues were found.');
+  if (tableData.length) {
+    const report = table(tableData);
+    if (args.export) writeFile('report.txt', report.replace(/\[\d+m/g, ''));
+    return report;
+  } else {
+    return chalk.green('\n✔ Congratulations! No issues were found.');
+  }
 };
 
 const generateTableRow = ({property, location, notSupported}) => {
