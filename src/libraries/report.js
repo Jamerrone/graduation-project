@@ -11,7 +11,7 @@ const generateReport = (supportData, args) => {
   ];
 
   const tableData = supportData.reduce((acc, property, index) => {
-    if (index % 25 === 0) acc.push(tableHeading);
+    if (index % 50 === 0) acc.push(tableHeading);
     acc.push(generateTableRow(property));
     return acc;
   }, []);
@@ -28,8 +28,8 @@ const generateReport = (supportData, args) => {
 const generateTableRow = ({property, location, notSupported}) => {
   return [
     `Ln ${location.line}, Col ${location.column}`,
-    `${property}`,
-    `${notSupported.join(', ')}`,
+    property,
+    notSupported.join(', '),
   ];
 };
 

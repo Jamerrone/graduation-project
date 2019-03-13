@@ -3,6 +3,8 @@ const path = require('path');
 
 const shared = require('./shared');
 const {printEr} = require('../libraries/utils');
+process.stdout.clearLine();
+process.stdout.cursorTo(0);
 
 module.exports = (args) => {
   const filePath = args.input;
