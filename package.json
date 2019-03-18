@@ -30,14 +30,14 @@
     "css-tree": "^1.0.0-alpha.29",
     "fast-glob": "^2.2.6",
     "inquirer": "^6.2.2",
-    "mdn-browser-compat-data": "0.0.70",
+    "mdn-browser-compat-data": "0.0.71",
     "minimist": "^1.2.0",
     "ora": "^3.2.0",
     "string-similarity": "^3.0.0",
     "table": "^5.2.3"
   },
   "devDependencies": {
-    "eslint": "^5.15.1",
+    "eslint": "^5.15.2",
     "eslint-config-google": "^0.12.0"
   }
 }
