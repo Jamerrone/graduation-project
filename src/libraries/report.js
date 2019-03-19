@@ -25,10 +25,10 @@ const generateReport = (supportData, args) => {
   }
 };
 
-const generateTableRow = ({property, location, notSupported}) => {
+const generateTableRow = ({name, location, notSupported}) => {
   return [
     `Ln ${location.line}, Col ${location.column}`,
-    property,
+    name,
     notSupported.join(', '),
   ];
 };

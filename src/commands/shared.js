@@ -1,5 +1,5 @@
 const {checkBrowserSupport} = require('../libraries/compat');
-const {getCSSDeclarations, parseCSS} = require('../libraries/css');
+const {getCSSStatements, parseCSS} = require('../libraries/css');
 const {readFile} = require('../libraries/files');
 const {generateReport} = require('../libraries/report');
 const {printLn} = require('../libraries/utils');
@@ -15,8 +15,8 @@ const browserscope = {
 module.exports = (filePath, args) => {
   const fileString = readFile(filePath);
   const parsedCSS = parseCSS(fileString);
-  const cssDeclarations = getCSSDeclarations(parsedCSS);
-  const browserSupport = checkBrowserSupport(cssDeclarations, browserscope);
-  const generatedReport = generateReport(browserSupport, args);
+  const cssStatements = getCSSStatements(parsedCSS);
+  const browserSupport = checkBrowserSupport(cssStatements, browserscope);
+  const generatedReport = generateReport(browserSupport.declarations, args);
   printLn(generatedReport);
 };
