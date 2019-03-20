@@ -1,37 +1,63 @@
-const {table} = require('table');
+const Table = require('cli-table3');
 const chalk = require('chalk');
 
 const {writeFile} = require('./files');
 
 const generateReport = (supportData, args) => {
-  const tableHeading = [
-    chalk.bold.yellow('Location'),
-    chalk.bold.yellow('Property Name'),
-    chalk.bold.yellow('Unsupported By'),
-  ];
+  const tableConfig = {
+    colWidths: [18, 36, 36],
+    wordWrap: true,
+  };
 
-  const tableData = supportData.reduce((acc, property, index) => {
-    if (index % 50 === 0) acc.push(tableHeading);
-    acc.push(generateTableRow(property));
+  const tables = generateTables(supportData).reduce((acc, data) => {
+    if (data.length) {
+      const report = new Table(tableConfig);
+      report.push(...data);
+      acc.push('\n' + report.toString());
+    }
     return acc;
   }, []);
 
-  if (tableData.length) {
-    const report = table(tableData);
-    if (args.export) writeFile('report.txt', report.replace(/\[\d+m/g, ''));
-    return report;
+  if (tables.length) {
+    args.export &&
+      writeFile('report.txt', tables.join('\n').replace(/\[\d+m/g, ''));
+    return tables;
   } else {
     return chalk.green('\n✔ Congratulations! No issues were found.');
   }
 };
 
-const generateTableRow = ({name, location, notSupported}) => {
+const generateTables = (supportData) => {
+  return Object.entries(supportData).reduce((acc, [statement, data]) => {
+    acc.push(
+        data.reduce((acc, property, index) => {
+          if (index % 50 === 0) acc.push(generateTableHead(statement));
+          acc.push(generateTableRow(property));
+          return acc;
+        }, [])
+    );
+    return acc;
+  }, []);
+};
+
+const generateTableHead = (statement) => {
+  const getHeading = {
+    atrules: 'At-Rule',
+    declarations: 'Property',
+  };
+
   return [
-    `Ln ${location.line}, Col ${location.column}`,
-    name,
-    notSupported.join(', '),
+    {content: chalk.bold.yellow('Location')},
+    {content: chalk.bold.yellow(`${getHeading[statement]} Name`)},
+    {content: chalk.bold.yellow('Unsupported By')},
   ];
 };
+
+const generateTableRow = ({name, location, notSupported}) => [
+  {vAlign: 'center', content: `Ln ${location.line}, Col ${location.column}`},
+  {vAlign: 'center', content: name},
+  {vAlign: 'center', content: notSupported.join(', ')},
+];
 
 module.exports = {
   generateReport,

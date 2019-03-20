@@ -17,6 +17,6 @@ module.exports = (filePath, args) => {
   const parsedCSS = parseCSS(fileString);
   const cssStatements = getCSSStatements(parsedCSS);
   const browserSupport = checkBrowserSupport(cssStatements, browserscope);
-  const generatedReport = generateReport(browserSupport.declarations, args);
+  const generatedReport = generateReport(browserSupport, args);
   printLn(generatedReport);
 };
