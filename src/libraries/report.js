@@ -44,11 +44,12 @@ const generateTableHead = (statement) => {
   const getHeading = {
     atrules: 'At-Rule',
     declarations: 'Property',
+    mediaFeatures: 'Media Feature',
   };
 
   return [
     {content: chalk.bold.yellow('Location')},
-    {content: chalk.bold.yellow(`${getHeading[statement]} Name`)},
+    {content: chalk.bold.yellow(getHeading[statement])},
     {content: chalk.bold.yellow('Unsupported By')},
   ];
 };
