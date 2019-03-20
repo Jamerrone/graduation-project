@@ -1,48 +1,85 @@
 const bcd = require('mdn-browser-compat-data');
 
-const checkBrowserSupport = (declarations, browserscope) => {
-  return filterSupportedProperties(
-      declarations.reduce((acc, {property, loc}) => {
-        const propertySupportData = getPropertySupportData(property);
-        const {line, column} = loc.start;
+const checkBrowserSupport = (
+    {atrules, declarations, mediaFeatures},
+    browserscope
+) => {
+  return {
+    atrules: atrules
+        .reduce((acc, {name, loc}) => {
+          const supportData = getAtruleSupportData(name);
 
-        if (propertySupportData) {
-          acc.push(
-              Object.entries(browserscope).reduce((acc, [browser, version]) => {
-                acc.property = property;
-                acc.location = {line, column};
-                acc.supported = acc.supported || [];
-                acc.notSupported = acc.notSupported || [];
+          supportData &&
+          acc.push(formatData(browserscope, name, loc, supportData));
 
-                const browserSupportData = Array.isArray(
-                    propertySupportData[browser]
-                )
-              ? propertySupportData[browser][0].version_added
-              : propertySupportData[browser].version_added;
+          return acc;
+        }, [])
+        .filter((atrule) => atrule.notSupported.length),
+    declarations: declarations
+        .reduce((acc, {property, loc}) => {
+          const supportData = getPropertySupportData(property);
 
-            browserSupportData && browserSupportData <= version
-              ? acc.supported.push(browser)
-              : acc.notSupported.push(browser);
+          supportData &&
+          acc.push(formatData(browserscope, property, loc, supportData));
 
-            return acc;
-              }, {})
+          return acc;
+        }, [])
+        .filter((property) => property.notSupported.length),
+    mediaFeatures: mediaFeatures
+        .reduce((acc, {name, loc}) => {
+          const supportData = getMediaFeatureSupportData(
+              name.replace(/^(min-)|(max-)/, '')
           );
-        }
 
-        return acc;
-      }, [])
-  );
+          supportData &&
+          acc.push(formatData(browserscope, name, loc, supportData));
+
+          return acc;
+        }, [])
+        .filter((mediaFeature) => mediaFeature.notSupported.length),
+  };
 };
 
-const filterSupportedProperties = (browserSupport) => {
-  return browserSupport.filter((property) => property.notSupported.length);
+const formatData = (browserscope, name, loc, supportData) => {
+  const {line, column} = loc.start;
+
+  return Object.entries(browserscope).reduce((acc, [browser, version]) => {
+    acc.name = name;
+    acc.location = {line, column};
+    acc.supported = acc.supported || [];
+    acc.notSupported = acc.notSupported || [];
+
+    const browserSupportData = Array.isArray(supportData[browser])
+      ? supportData[browser][0].version_added
+      : supportData[browser].version_added;
+
+    browserSupportData && browserSupportData <= version
+      ? acc.supported.push(browser)
+      : acc.notSupported.push(browser);
+
+    return acc;
+  }, {});
+};
+
+const getAtruleSupportData = (atrule) => {
+  try {
+    return bcd.css['at-rules'][atrule].__compat.support;
+  } catch (error) {
+    return false;
+  }
 };
 
 const getPropertySupportData = (property) => {
-  // Write some logic to get the property's context.
-  // E.g "justify-content" needs a ctx of "flex_context" or "grid_context".
   try {
     return bcd.css.properties[property].__compat.support;
+  } catch (error) {
+    return false;
+  }
+};
+
+const getMediaFeatureSupportData = (mediaFeature) => {
+  try {
+    return bcd.css['at-rules']['media'][mediaFeature].__compat.support;
   } catch (error) {
     return false;
   }

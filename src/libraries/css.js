@@ -8,15 +8,16 @@ const generateCSS = (cssNode) => {
   return generatedCSS;
 };
 
-const getCSSDeclarations = (cssNode) => {
-  const declarations = [];
+const getCSSStatements = (cssNode) => {
+  const statements = {atrules: [], declarations: [], mediaFeatures: []};
   csstree.walk(cssNode, {
-    visit: 'Declaration',
     enter(node) {
-      declarations.push(node);
+      if (node.type === 'Atrule') statements.atrules.push(node);
+      if (node.type === 'Declaration') statements.declarations.push(node);
+      if (node.type === 'MediaFeature') statements.mediaFeatures.push(node);
     },
   });
-  return declarations;
+  return statements;
 };
 
 const parseCSS = (fileString) => {
@@ -31,6 +32,6 @@ const parseCSS = (fileString) => {
 
 module.exports = {
   generateCSS,
-  getCSSDeclarations,
+  getCSSStatements,
   parseCSS,
 };
