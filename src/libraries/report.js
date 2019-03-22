@@ -55,9 +55,9 @@ const generateTableHead = (statement) => {
 };
 
 const generateTableRow = ({name, location, notSupported}) => [
-  {vAlign: 'center', content: `Ln ${location.line}, Col ${location.column}`},
-  {vAlign: 'center', content: name},
-  {vAlign: 'center', content: notSupported.join(', ')},
+  {content: `Ln ${location.line}, Col ${location.column}`},
+  {content: name},
+  {content: notSupported.join(', ')},
 ];
 
 module.exports = {

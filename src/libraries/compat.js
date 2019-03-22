@@ -55,7 +55,7 @@ const formatData = (browserscope, name, loc, supportData) => {
 
     browserSupportData && browserSupportData <= version
       ? acc.supported.push(browser)
-      : acc.notSupported.push(browser);
+      : acc.notSupported.push(`${browser} ${version}`);
 
     return acc;
   }, {});
