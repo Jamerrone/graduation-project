@@ -21,7 +21,11 @@ const readFile = (filePath) => {
 const writeFile = (filePath, data) => {
   fs.writeFile(filePath, data, (err) => {
     if (err) throw err;
-    printLn(chalk.green(`✔ The report was successfully saved: "${filePath}".`));
+    printLn(
+        chalk.green(
+            `[firefly] ✔ The report was successfully exported: "${filePath}".`
+        )
+    );
   });
 };
 

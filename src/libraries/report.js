@@ -13,7 +13,7 @@ const generateReport = (supportData, args) => {
     if (data.length) {
       const report = new Table(tableConfig);
       report.push(...data);
-      acc.push('\n' + report.toString());
+      acc.push(report.toString());
     }
     return acc;
   }, []);
@@ -21,9 +21,9 @@ const generateReport = (supportData, args) => {
   if (tables.length) {
     args.export &&
       writeFile('report.txt', tables.join('\n').replace(/\[\d+m/g, ''));
-    return tables;
+    return tables.join('\n');
   } else {
-    return chalk.green('\n✔ Congratulations! No issues were found.');
+    return chalk.green('[firefly] ✔ Congratulations! No issues were found.');
   }
 };
 

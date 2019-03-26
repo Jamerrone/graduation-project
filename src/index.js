@@ -6,8 +6,8 @@ const {printEr} = require('./libraries/utils');
 
 (() => {
   const args = minimist(process.argv.slice(2), {
-    alias: {i: 'input', e: 'export', v: 'version', h: 'help'},
-    boolean: ['export', 'version', 'help'],
+    alias: {i: 'input', e: 'export', w: 'watch', v: 'version', h: 'help'},
+    boolean: ['export', 'watch', 'version', 'help'],
     string: ['input'],
     unknown(arg) {
       printEr([
@@ -16,6 +16,7 @@ const {printEr} = require('./libraries/utils');
           stringSimilarity.findBestMatch(arg, [
             '--input',
             '--export',
+            '--watch',
             '--version',
             '--help',
           ]).bestMatch.target
