@@ -2,7 +2,7 @@ Sprint 1:
   Load CSS File:
     ✔ Scan local directories for *.css files. @started(19-03-06 10:39) @done(19-03-06 11:04) @lasted(25m23s)
       ✔ Read the selected file. @started(19-03-06 11:04) @done(19-03-06 11:30) @lasted(26m25s)
-    ✔ Create a "-f & --file" flag for direct user input. @started(19-03-06 11:49) @done(19-03-06 13:00) @lasted(1h11m20s)
+    ✔ Create a `-f` & `--file` flag for direct user input. @started(19-03-06 11:49) @done(19-03-06 13:00) @lasted(1h11m20s)
       ✔ Read user submitted file. @started(19-03-06 11:49) @done(19-03-06 13:00) @lasted(1h11m28s)
   
   Parse Loaded CSS File:
@@ -25,3 +25,28 @@ Others/Bugs:
   ☐ Add more general information, feedback, and other text content.
   ☐ Write some logic to get the property's context. (libraries/compat[41])
     E.g "justify-content" needs a ctx of "flex_context" or "grid_context".
+
+Sprint 2:
+  Sprint 1 Improvements:
+    ☐ Allow users to pass the file path without the `--input` flag.
+      E.g `firefly <file-path>`
+    ☐ Firefly should be able to validate the entire project at once.
+      Use the base `firefly` command for that.
+    ☐ Allow users to provide a list of files and directories that should be ignored.
+      E.g. [`./dist`, `./node_modules`]
+    ☐ Rebuild the export functionality, it should return a `JSON` object.
+      Allow users to provide a custom name for the export file.
+  Browserscope Support:
+    ☐ Use the user-defined browserscope.
+      ☐ Transform the browserlist to a human-readable/usable object.
+        ☐ Get the browserlist from ".fireflyrc.json" or "package.json".
+          Provide a default/fallback value; notify the user.
+
+  Dynamic Feedback System:
+    ☐ Create a folder/file structure for storing the alternatives.
+    ☐ Generate a feedback message for each unsupported CSS property.
+      Provide a list of alternatives if possible, otherwise a generic message.
+  
+  Watch Function/Command:
+    ✔ Create a `watch` function/command that reruns firefly on file change. @done(19-03-27 12:23)
+      ✔ Create a `-w` & `--watch` flag for it. @done(19-03-27 12:22)

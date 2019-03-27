@@ -12,7 +12,7 @@ module.exports = () => {
     '',
     `${chalk.bold('Flags:')}`,
     `   ${chalk.cyan('-e, --export')}         Export the generated report.`,
-    `   ${chalk.cyan('-w, --watch')}          WIP.`,
+    `   ${chalk.cyan('-w, --watch')}          Rerun firefly on file change.`,
     `   ${chalk.cyan('-h, --help')}           Output usage information.`,
     `   ${chalk.cyan('-v, --version')}        Output the version number.`,
     '',

@@ -32,7 +32,7 @@ module.exports = (filePath, args) => {
           '[firefly] watching:'
       )} ${filePath}\n${firefly(filePath, args)}`;
 
-      const less = spawn(`cat <<< '${feedbackReport}' | less -csj2QR`, {
+      const less = spawn(`cat <<< '${feedbackReport}' | less -cj2sqRK`, {
         stdio: 'inherit',
         shell: true,
       });
