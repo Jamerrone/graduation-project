@@ -10,22 +10,24 @@ const {printEr} = require('./libraries/utils');
     boolean: ['export', 'watch', 'version', 'help'],
     string: ['input'],
     unknown(arg) {
-      printEr([
-        `"${arg}" is not a valid option/command. See "firefly --help".`,
-        `Did you mean: ${
-          stringSimilarity.findBestMatch(arg, [
-            '--input',
-            '--export',
-            '--watch',
-            '--version',
-            '--help',
-          ]).bestMatch.target
-        }?`,
-      ]);
+      return arg.startsWith('-')
+        ? printEr([
+          `"${arg}" is not a valid option/command. See "firefly --help".`,
+          `Did you mean: ${
+            stringSimilarity.findBestMatch(arg, [
+              '--input',
+              '--export',
+              '--watch',
+              '--version',
+              '--help',
+            ]).bestMatch.target
+          }?`,
+        ])
+        : true;
     },
   });
 
-  if (args.input) {
+  if (args.input || args._[0]) {
     require('./commands/input')(args);
   } else if (args.version) {
     require('./commands/version')();
