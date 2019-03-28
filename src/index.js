@@ -6,7 +6,7 @@ const stringSimilarity = require('string-similarity');
 const {printEr} = require('./libraries/utils');
 
 const explorer = cosmiconfig('firefly');
-const {config: appConfig} = explorer.searchSync() || {config: {}};
+const {config: appConfig = {}} = explorer.searchSync() || {};
 const args = minimist(process.argv.slice(2), {
   alias: {i: 'input', e: 'export', w: 'watch', v: 'version', h: 'help'},
   boolean: ['export', 'watch', 'version', 'help'],

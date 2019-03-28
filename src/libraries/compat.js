@@ -1,4 +1,6 @@
-const bcd = require('mdn-browser-compat-data');
+const {
+  css: {'at-rules': AT_RULES, properties: PROPERTIES},
+} = require('mdn-browser-compat-data');
 
 const checkBrowserSupport = (
     {atrules, declarations, mediaFeatures},
@@ -63,7 +65,7 @@ const formatData = (browserscope, name, loc, supportData) => {
 
 const getAtruleSupportData = (atrule) => {
   try {
-    return bcd.css['at-rules'][atrule].__compat.support;
+    return AT_RULES[atrule].__compat.support;
   } catch (error) {
     return false;
   }
@@ -71,7 +73,7 @@ const getAtruleSupportData = (atrule) => {
 
 const getPropertySupportData = (property) => {
   try {
-    return bcd.css.properties[property].__compat.support;
+    return PROPERTIES[property].__compat.support;
   } catch (error) {
     return false;
   }
@@ -79,7 +81,7 @@ const getPropertySupportData = (property) => {
 
 const getMediaFeatureSupportData = (mediaFeature) => {
   try {
-    return bcd.css['at-rules']['media'][mediaFeature].__compat.support;
+    return AT_RULES['media'][mediaFeature].__compat.support;
   } catch (error) {
     return false;
   }
