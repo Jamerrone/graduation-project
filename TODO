@@ -32,7 +32,7 @@ Sprint 2:
       E.g `firefly <file-path>`
     ☐ Firefly should be able to validate the entire project at once.
       Use the base `firefly` command for that.
-    ☐ Allow users to provide a list of files and directories that should be ignored.
+    ✔ Allow users to provide a list of files and directories that should be ignored. @started(19-03-27 14:12) @done(19-03-27 17:04) @lasted(2h52m5s)
       E.g. [`./dist`, `./node_modules`]
     ☐ Rebuild the export functionality, it should return a `JSON` object.
       Allow users to provide a custom name for the export file.

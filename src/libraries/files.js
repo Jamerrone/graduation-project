@@ -5,9 +5,11 @@ const ora = require('ora');
 
 const {printEr, printLn} = require('./utils');
 
-const findFiles = async (fileType) => {
+const findFiles = async (fileType, ignore = []) => {
   const spinner = ora('Searching for CSS files...').start();
-  const files = await fg([`**/*.${fileType}`, '!**/node_modules/**']);
+  const files = await fg([`**/*.${fileType}`], {
+    ignore: [...ignore, '**/node_modules'],
+  });
   spinner.stop();
   return files;
 };
