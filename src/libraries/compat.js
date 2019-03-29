@@ -50,14 +50,25 @@ const formatData = (browserscope, name, loc, supportData) => {
     acc.location = {line, column};
     acc.supported = acc.supported || [];
     acc.notSupported = acc.notSupported || [];
+    acc.unknown = acc.unknown || [];
 
-    const browserSupportData = Array.isArray(supportData[browser])
-      ? supportData[browser][0].version_added
-      : supportData[browser].version_added;
+    let browserSupportData = Array.isArray(supportData[browser])
+      ? supportData[browser][0]
+      : supportData[browser];
 
-    browserSupportData && browserSupportData <= version
-      ? acc.supported.push(browser)
-      : acc.notSupported.push(`${browser} ${version}`);
+    try {
+      browserSupportData = browserSupportData.version_added;
+    } catch (error) {
+      browserSupportData = null;
+    }
+
+    if (browserSupportData === null) {
+      acc.unknown.push(`${browser} ${version}`);
+    } else if (browserSupportData && browserSupportData <= version) {
+      acc.supported.push(`${browser} ${version}`);
+    } else {
+      acc.notSupported.push(`${browser} ${version}`);
+    }
 
     return acc;
   }, {});

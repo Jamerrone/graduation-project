@@ -30,7 +30,7 @@ const args = minimist(process.argv.slice(2), {
 });
 
 if (args.input || args._[0]) {
-  require('./commands/input')(args);
+  require('./commands/input')(appConfig, args);
 } else if (args.version) {
   require('./commands/version')();
 } else if (args.help) {

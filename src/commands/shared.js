@@ -2,35 +2,29 @@ const {spawn} = require('child_process');
 const chalk = require('chalk');
 const chokidar = require('chokidar');
 
+const {getBrowserslist} = require('../libraries/browserslist');
 const {checkBrowserSupport} = require('../libraries/compat');
 const {getCSSStatements, parseCSS} = require('../libraries/css');
 const {readFile} = require('../libraries/files');
 const {generateReport} = require('../libraries/report');
 const {printLn} = require('../libraries/utils');
 
-const browserscope = {
-  chrome: 60,
-  edge: 15,
-  firefox: 60,
-  ie: 10,
-  safari: 10,
-};
-
-const firefly = (filePath, args) => {
+const firefly = (filePath, browserslist, args) => {
   const fileString = readFile(filePath);
   const parsedCSS = parseCSS(fileString);
   const cssStatements = getCSSStatements(parsedCSS);
+  const browserscope = getBrowserslist(browserslist);
   const browserSupport = checkBrowserSupport(cssStatements, browserscope);
   const generatedReport = generateReport(browserSupport, args);
   return generatedReport;
 };
 
-module.exports = (filePath, args) => {
+module.exports = (filePath, browserslist, args) => {
   if (args.watch) {
     const watcher = chokidar.watch(filePath).on('all', () => {
       const feedbackReport = `${chalk.cyan(
           '[firefly] watching:'
-      )} ${filePath}\n${firefly(filePath, args)}`;
+      )} ${filePath}\n${firefly(filePath, browserslist, args)}`;
 
       const less = spawn(`cat <<< '${feedbackReport}' | less -cj2sqRK`, {
         stdio: 'inherit',
@@ -40,6 +34,6 @@ module.exports = (filePath, args) => {
       less.on('exit', () => watcher.close());
     });
   } else {
-    printLn(firefly(filePath, args));
+    printLn(firefly(filePath, browserslist, args));
   }
 };
