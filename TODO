@@ -20,11 +20,6 @@ Sprint 1:
         ✔ Generate a feedback message for each unsupported CSS property. @started(19-03-12 11:11) @done(19-03-12 11:32) @lasted(21m39s)
           | Location (Ln, Col) | Property Name | Unsupported By |
 
-Others/Bugs:
-  ✔ Allow users to export their generated report. @done(19-03-13 13:11)
-  ☐ Add more general information, feedback, and other text content.
-  ☐ Write some logic to get the property's context. (libraries/compat[41])
-    E.g "justify-content" needs a ctx of "flex_context" or "grid_context".
 
 Sprint 2:
   Sprint 1 Improvements:
@@ -37,9 +32,9 @@ Sprint 2:
     ☐ Rebuild the export functionality, it should return a `JSON` object.
       Allow users to provide a custom name for the export file.
   Browserscope Support:
-    ☐ Use the user-defined browserscope.
-      ☐ Transform the browserlist to a human-readable/usable object.
-        ☐ Get the browserlist from ".fireflyrc.json" or "package.json".
+    ✔ Use the user-defined browserscope. @started(19-03-29 11:31) @done(19-03-29 14:28) @lasted(2h57m5s)
+      ✔ Transform the browserlist to a human-readable/usable object. @started(19-03-29 11:13) @done(19-03-29 14:09) @lasted(2h56m44s)
+        ✔ Get the browserlist from ".fireflyrc.json" or "package.json". @started(19-03-29 09:54) @done(19-03-29 14:09) @lasted(4h15m35s)
           Provide a default/fallback value; notify the user.
 
   Dynamic Feedback System:
@@ -50,3 +45,11 @@ Sprint 2:
   Watch Function/Command:
     ✔ Create a `watch` function/command that reruns firefly on file change. @done(19-03-27 12:23)
       ✔ Create a `-w` & `--watch` flag for it. @done(19-03-27 12:22)
+
+
+Others/Bugs:
+  ✔ Allow users to export their generated report. @done(19-03-13 13:11)
+  ☐ Add more general information, feedback, and other text content.
+  ☐ Write some logic to get the property's context. (libraries/compat)
+    E.g "justify-content" needs a ctx of "flex_context" or "grid_context".
+  ☐ Handle CSS features with "unknown" browsersupport. (libraries/browserslist)
