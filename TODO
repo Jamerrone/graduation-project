@@ -41,6 +41,7 @@ Sprint 2:
     ☐ Create a folder/file structure for storing the alternatives.
     ☐ Generate a feedback message for each unsupported CSS property.
       Provide a list of alternatives if possible, otherwise a generic message.
+      ☐ Refactor the current report system, see "report-examples".
   
   Watch Function/Command:
     ✔ Create a `watch` function/command that reruns firefly on file change. @done(19-03-27 12:23)
