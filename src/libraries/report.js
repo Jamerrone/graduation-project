@@ -19,8 +19,11 @@ const generateReport = (supportData, args) => {
   }, []);
 
   if (tables.length) {
-    args.export &&
-      writeFile('report.txt', tables.join('\n').replace(/\[\d+m/g, ''));
+    if ('export' in args) {
+      let exportPath = args.export || 'report.json';
+      if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
+      writeFile(`${exportPath}`, JSON.stringify(supportData, null, 2));
+    }
     return tables.join('\n');
   } else {
     return chalk.green('[firefly] ✔ Congratulations! No issues were found.');
@@ -42,8 +45,8 @@ const generateTables = (supportData) => {
 
 const generateTableHead = (statement) => {
   const getHeading = {
-    atrules: 'At-Rule',
-    declarations: 'Property',
+    atRules: 'At-Rule',
+    properties: 'Property',
     mediaFeatures: 'Media Feature',
   };
 

@@ -9,8 +9,8 @@ const explorer = cosmiconfig('firefly');
 const {config: appConfig = {}} = explorer.searchSync() || {};
 const args = minimist(process.argv.slice(2), {
   alias: {i: 'input', e: 'export', w: 'watch', v: 'version', h: 'help'},
-  boolean: ['export', 'watch', 'version', 'help'],
-  string: ['input'],
+  boolean: ['watch', 'version', 'help'],
+  string: ['input', 'export'],
   unknown(arg) {
     return arg.startsWith('-')
       ? printEr([

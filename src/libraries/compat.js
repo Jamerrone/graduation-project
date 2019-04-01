@@ -7,7 +7,7 @@ const checkBrowserSupport = (
     browserscope
 ) => {
   return {
-    atrules: atrules
+    atRules: atrules
         .reduce((acc, {name, loc}) => {
           const supportData = getAtruleSupportData(name);
 
@@ -17,7 +17,7 @@ const checkBrowserSupport = (
           return acc;
         }, [])
         .filter((atrule) => atrule.notSupported.length),
-    declarations: declarations
+    properties: declarations
         .reduce((acc, {property, loc}) => {
           const supportData = getPropertySupportData(property);
 
