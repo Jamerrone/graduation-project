@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/Jamerrone/graduation-project#readme",
   "dependencies": {
-    "browserslist": "^4.5.2",
+    "browserslist": "^4.5.3",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.5",
     "cli-table3": "^0.5.1",
@@ -40,7 +40,7 @@
     "string-similarity": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.15.2",
+    "eslint": "^5.16.0",
     "eslint-config-google": "^0.12.0"
   }
 }
