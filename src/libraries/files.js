@@ -2,16 +2,13 @@ const chalk = require('chalk');
 const fg = require('fast-glob');
 const fs = require('fs');
 const getDirName = require('path').dirname;
-const ora = require('ora');
 
 const {printEr, printLn} = require('./utils');
 
 const findFiles = async (fileType, ignore = []) => {
-  const spinner = ora('Searching for CSS files...').start();
   const files = await fg([`**/*.${fileType}`], {
     ignore: [...ignore, '**/node_modules'],
   });
-  spinner.stop();
   return files;
 };
 
@@ -27,9 +24,7 @@ const writeFile = (filePath, data) => {
     fs.writeFile(filePath, data, (err) => {
       if (err) throw err;
       printLn(
-          chalk.green(
-              `[firefly] ✔ The report was successfully exported: "${filePath}".`
-          )
+          chalk.green(`\n✔ The report was successfully exported: "${filePath}".`)
       );
     });
   });

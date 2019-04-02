@@ -25,7 +25,7 @@ Sprint 2:
   Sprint 1 Improvements:
     ✔ Allow users to pass the file path without the `--input` flag. @started(19-03-27 12:51) @done(19-03-27 13:28) @lasted(37m33s)
       E.g `firefly <file-path>`
-    ☐ Firefly should be able to validate the entire project at once.
+    ✔ Firefly should be able to validate the entire project at once. @started(19-04-01 14:05) @done(19-04-02 18:08) @lasted(1d4h3m40s)
       Use the base `firefly` command for that.
     ✔ Allow users to provide a list of files and directories that should be ignored. @started(19-03-27 14:12) @done(19-03-27 17:04) @lasted(2h52m5s)
       E.g. [`./dist`, `./node_modules`]
