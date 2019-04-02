@@ -1,16 +1,9 @@
 const chalk = require('chalk');
 
-const {writeFile} = require('./files');
-
-const generateReport = (filePath, supportData, args) => {
+const generateReport = (filePath, supportData) => {
   const report = generateTables(filePath, supportData);
 
   if (report.length > 1) {
-    if ('export' in args) {
-      let exportPath = args.export || 'report.json';
-      if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
-      writeFile(`${exportPath}`, JSON.stringify(supportData, null, 2));
-    }
     return report.join('\n');
   } else {
     return `${chalk.bgGreen.black.bold(' PASS ')} ${filePath}\n${chalk.green(
