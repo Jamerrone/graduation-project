@@ -1,67 +1,69 @@
-const Table = require('cli-table3');
 const chalk = require('chalk');
 
 const {writeFile} = require('./files');
 
-const generateReport = (supportData, args) => {
-  const tableConfig = {
-    colWidths: [18, 36, 36],
-    wordWrap: true,
-  };
+const generateReport = (filePath, supportData, args) => {
+  const report = generateTables(filePath, supportData);
 
-  const tables = generateTables(supportData).reduce((acc, data) => {
-    if (data.length) {
-      const report = new Table(tableConfig);
-      report.push(...data);
-      acc.push(report.toString());
-    }
-    return acc;
-  }, []);
-
-  if (tables.length) {
+  if (report.length > 1) {
     if ('export' in args) {
       let exportPath = args.export || 'report.json';
       if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
       writeFile(`${exportPath}`, JSON.stringify(supportData, null, 2));
     }
-    return tables.join('\n');
+    return report.join('\n');
   } else {
-    return chalk.green('[firefly] ✔ Congratulations! No issues were found.');
+    return `${chalk.bgGreen.black.bold(' PASS ')} ${filePath}\n${chalk.green(
+        '  ✔ Congratulations! No issues were found.'
+    )}`;
   }
 };
 
-const generateTables = (supportData) => {
-  return Object.entries(supportData).reduce((acc, [statement, data]) => {
-    acc.push(
-        data.reduce((acc, property, index) => {
-          if (index % 50 === 0) acc.push(generateTableHead(statement));
-          acc.push(generateTableRow(property));
-          return acc;
-        }, [])
-    );
-    return acc;
-  }, []);
-};
-
-const generateTableHead = (statement) => {
+const generateTables = (filePath, supportData) => {
   const getHeading = {
-    atRules: 'At-Rule',
-    properties: 'Property',
-    mediaFeatures: 'Media Feature',
+    atRules: 'At-Rules',
+    properties: 'Properties',
+    mediaFeatures: 'Media Features',
   };
 
-  return [
-    {content: chalk.bold.yellow('Location')},
-    {content: chalk.bold.yellow(getHeading[statement])},
-    {content: chalk.bold.yellow('Unsupported By')},
-  ];
+  return Object.entries(supportData).reduce(
+      (acc, [statement, data]) => {
+        const table = data
+            .reduce((acc, property, index) => {
+              if (index === 0) {
+                acc.push(
+                    `  ${chalk.bold(getHeading[statement])} (${chalk.red.bold(
+                        data.length
+                    )})`
+                );
+              }
+              acc.push(generateTableRow(property));
+              return acc;
+            }, [])
+            .join('\n');
+        if (table.length) acc.push(table);
+        return acc;
+      },
+      [`${chalk.bgRed.black.bold(' FAIL ')} ${filePath}`]
+  );
 };
 
-const generateTableRow = ({name, location, notSupported}) => [
-  {content: `Ln ${location.line}, Col ${location.column}`},
-  {content: name},
-  {content: notSupported.join(', ')},
-];
+const generateTableRow = ({name, location, notSupported}) => {
+  const formatNotSupported = (notSupported) => {
+    return notSupported.length <= 3
+      ? notSupported.join(', ').replace(/, ([^,]*)$/, ' & $1')
+      : notSupported
+          .slice(1, 4)
+          .join(', ')
+          .replace(/, ([^,]*)$/, ' & others');
+  };
+
+  return `    ${chalk.red('✘')} [${location.line}:${
+    location.column
+  }] ${chalk.dim(
+      `${formatNotSupported(notSupported)} does not support`
+  )} '${name}'`;
+};
 
 module.exports = {
   generateReport,

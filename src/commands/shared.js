@@ -15,7 +15,7 @@ const firefly = (filePath, browserslist, args) => {
   const cssStatements = getCSSStatements(parsedCSS);
   const browserscope = getBrowserslist(browserslist);
   const browserSupport = checkBrowserSupport(cssStatements, browserscope);
-  const generatedReport = generateReport(browserSupport, args);
+  const generatedReport = generateReport(filePath, browserSupport, args);
   return generatedReport;
 };
 

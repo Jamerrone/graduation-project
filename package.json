@@ -29,7 +29,6 @@
     "browserslist": "^4.5.3",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.5",
-    "cli-table3": "^0.5.1",
     "cosmiconfig": "^5.2.0",
     "css-tree": "^1.0.0-alpha.29",
     "fast-glob": "^2.2.6",
