@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/Jamerrone/graduation-project#readme",
   "dependencies": {
-    "browserslist": "^4.5.3",
+    "browserslist": "^4.5.4",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.5",
     "cosmiconfig": "^5.2.0",

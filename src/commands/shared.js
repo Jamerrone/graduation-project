@@ -1,6 +1,5 @@
-// const {spawn} = require('child_process');
-// const chalk = require('chalk');
-// const chokidar = require('chokidar');
+const chalk = require('chalk');
+const chokidar = require('chokidar');
 
 const {getBrowserslist} = require('../libraries/browserslist');
 const {checkBrowserSupport} = require('../libraries/compat');
@@ -19,24 +18,8 @@ const firefly = (filePath, browserslist) => {
   return {browserscope, browserSupport, generatedReport};
 };
 
-module.exports = (filePaths, browserslist, args) => {
-  if (typeof filePaths === 'string') filePaths = [filePaths];
-  // if (args.watch) {
-  //   const watcher = chokidar.watch(filePaths).on('all', () => {
-  //     const feedbackReport = `${chalk.cyan(
-  //         '[firefly] watching:'
-  //     )} ${filePaths}\n${firefly(filePaths, browserslist, args)}`;
-
-  //     const less = spawn(`cat <<< '${feedbackReport}' | less -cj2sqRK`, {
-  //       stdio: 'inherit',
-  //       shell: true,
-  //     });
-
-  //     less.on('exit', () => watcher.close());
-  //   });
-  // } else {
-  // }
-  const {e, r} = filePaths.reduce(
+const getExportAndReport = (filePaths, browserslist) => {
+  return filePaths.reduce(
       (acc, filePath) => {
         const {browserscope, browserSupport, generatedReport} = firefly(
             filePath,
@@ -53,12 +36,54 @@ module.exports = (filePaths, browserslist, args) => {
       },
       {e: [], r: []}
   );
+};
 
-  if ('export' in args) {
-    let exportPath = args.export || 'report.json';
-    if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
-    writeFile(`${exportPath}`, JSON.stringify(e, null, 2));
+module.exports = (filePaths, browserslist, args) => {
+  if (typeof filePaths === 'string') filePaths = [filePaths];
+  if (args.watch) {
+    let reportLineCount = 0;
+    const watchingNotification = `
+${
+  'export' in args
+    ? chalk.yellow(
+        '\n[firefly] warning: "--export" is not supported in watch-mode'
+    )
+    : ''
+}
+${chalk.cyan('[firefly] watching:')} ${filePaths
+    .join(', ')
+    .replace(/, ([^,]*)$/, ' & $1')}
+`;
+
+    const clearTerminal = () => {
+      process.stdout.moveCursor(0, -reportLineCount + 1);
+      process.stdout.clearScreenDown();
+      process.stdout.cursorTo(0);
+    };
+
+    const printReport = () => {
+      const {r} = getExportAndReport(filePaths, browserslist);
+      const message = r.join('\n\n') + watchingNotification;
+      reportLineCount = message.split('\n').length;
+      process.stdout.write(message);
+    };
+
+    chokidar
+        .watch(filePaths, {awaitWriteFinish: false})
+        .on('ready', () => printReport())
+        .on('change', (path) => {
+          clearTerminal();
+          printReport();
+        });
+  } else {
+    const {e, r} = getExportAndReport(filePaths, browserslist);
+
+    if ('export' in args) {
+      let exportPath = args.export || 'report.json';
+      if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
+      writeFile(`${exportPath}`, JSON.stringify(e, null, 2));
+    }
+
+    printLn(r.join('\n\n'));
   }
-
-  printLn(r.join('\n\n'));
 };
