@@ -24,7 +24,7 @@ const writeFile = (filePath, data) => {
     fs.writeFile(filePath, data, (err) => {
       if (err) throw err;
       printLn(
-          chalk.green(`\n✔ The report was successfully exported: "${filePath}".`)
+          chalk.green(`\n✔ The report was successfully exported: ${filePath}.`)
       );
     });
   });
