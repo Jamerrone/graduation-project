@@ -54,3 +54,4 @@ Others/Bugs:
   ☐ Write some logic to get the property's context. (libraries/compat)
     E.g "justify-content" needs a ctx of "flex_context" or "grid_context".
   ☐ Handle CSS features with "unknown" browsersupport. (libraries/browserslist)
+  ☐ In watch-more, make sure to only rerun firefly on the affected files.
