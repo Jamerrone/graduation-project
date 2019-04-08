@@ -38,7 +38,7 @@ Sprint 2:
           Provide a default/fallback value; notify the user.
 
   Dynamic Feedback System:
-    ☐ Create a folder/file structure for storing the alternatives.
+    ✔ Create a folder/file structure for storing the alternatives. @done(19-04-08 16:42)
     ☐ Generate a feedback message for each unsupported CSS property.
       Provide a list of alternatives if possible, otherwise a generic message.
       ✔ Refactor the current report system, see "report-examples". @started(19-04-02 10:18) @done(19-04-02 15:36) @lasted(5h18m44s)

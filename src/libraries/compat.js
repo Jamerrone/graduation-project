@@ -1,6 +1,7 @@
 const {
   css: {'at-rules': AT_RULES, properties: PROPERTIES},
 } = require('mdn-browser-compat-data');
+const API = require('../api');
 
 const checkBrowserSupport = (
     {atrules, declarations, mediaFeatures},
@@ -20,9 +21,12 @@ const checkBrowserSupport = (
     properties: declarations
         .reduce((acc, {property, loc}) => {
           const supportData = getPropertySupportData(property);
+          const feedback = getPropertyFeedback(property);
 
           supportData &&
-          acc.push(formatData(browserscope, property, loc, supportData));
+          acc.push(
+              formatData(browserscope, property, loc, supportData, feedback)
+          );
 
           return acc;
         }, [])
@@ -42,12 +46,13 @@ const checkBrowserSupport = (
   };
 };
 
-const formatData = (browserscope, name, loc, supportData) => {
+const formatData = (browserscope, name, loc, supportData, feedback = null) => {
   const {line, column} = loc.start;
 
   return Object.entries(browserscope).reduce((acc, [browser, version]) => {
     acc.name = name;
     acc.location = {line, column};
+    acc.feedback = feedback || '';
     acc.supported = acc.supported || [];
     acc.notSupported = acc.notSupported || [];
     acc.unknown = acc.unknown || [];
@@ -87,6 +92,14 @@ const getPropertySupportData = (property) => {
     return PROPERTIES[property].__compat.support;
   } catch (error) {
     return false;
+  }
+};
+
+const getPropertyFeedback = (property) => {
+  try {
+    return API.properties[property].feedback;
+  } catch (error) {
+    return null;
   }
 };
 
