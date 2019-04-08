@@ -31,8 +31,9 @@
     "chokidar": "^2.1.5",
     "cosmiconfig": "^5.2.0",
     "css-tree": "^1.0.0-alpha.29",
+    "extend": "^3.0.2",
     "fast-glob": "^2.2.6",
-    "mdn-browser-compat-data": "0.0.73",
+    "mdn-browser-compat-data": "0.0.74",
     "minimist": "^1.2.0",
     "string-similarity": "^3.0.0"
   },
