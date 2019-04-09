@@ -1,6 +1,7 @@
 const {
-  css: {'at-rules': AT_RULES, properties: PROPERTIES},
-} = require('mdn-browser-compat-data');
+  'at-rules': AT_RULES,
+  properties: PROPERTIES,
+} = require('../api/mdn-bcd');
 const API = require('../api');
 
 const checkBrowserSupport = (
