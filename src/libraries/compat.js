@@ -58,19 +58,11 @@ const formatData = (browserscope, name, loc, supportData, feedback = null) => {
     acc.notSupported = acc.notSupported || [];
     acc.unknown = acc.unknown || [];
 
-    let browserSupportData = Array.isArray(supportData[browser])
-      ? supportData[browser][0]
-      : supportData[browser];
+    const bsd = getBrowserSupportData(supportData, browser);
 
-    try {
-      browserSupportData = browserSupportData.version_added;
-    } catch (error) {
-      browserSupportData = null;
-    }
-
-    if (browserSupportData === null) {
+    if (bsd === null) {
       acc.unknown.push(`${browser} ${version}`);
-    } else if (browserSupportData && browserSupportData <= version) {
+    } else if (bsd && bsd <= version) {
       acc.supported.push(`${browser} ${version}`);
     } else {
       acc.notSupported.push(`${browser} ${version}`);
@@ -106,35 +98,31 @@ const getPropertyFeedback = (property, browserscope) => {
     const supportData = getPropertySupportData(next);
     const feedback = API.properties[next].feedback;
 
-    const notSupportedBy = Object.entries(browserscope).reduce(
-        (acc, [browser, version]) => {
-          let browserSupportData = Array.isArray(supportData[browser])
-          ? supportData[browser][0]
-          : supportData[browser];
-
-          try {
-            browserSupportData = browserSupportData.version_added;
-          } catch (error) {
-            browserSupportData = null;
-          }
-
-          if (browserSupportData && browserSupportData > version) {
-            acc.push(`${browser} ${version}`);
-          }
-
-          return acc;
-        },
-        []
+    const isNotSupported = Object.entries(browserscope).every(
+        ([browser, version]) => {
+          const bsd = getBrowserSupportData(supportData, browser);
+          return bsd && bsd > version;
+        }
     );
 
-    if (notSupportedBy.length) {
-      return getPropertyFeedback(next, browserscope);
-    } else {
-      return feedback;
-    }
+    return isNotSupported ? getPropertyFeedback(next, browserscope) : feedback;
   } catch (error) {
     return null;
   }
+};
+
+const getBrowserSupportData = (supportData, browser) => {
+  let browserSupportData = Array.isArray(supportData[browser])
+    ? supportData[browser][0]
+    : supportData[browser];
+
+  try {
+    browserSupportData = browserSupportData.version_added;
+  } catch (error) {
+    browserSupportData = null;
+  }
+
+  return browserSupportData;
 };
 
 const getMediaFeatureSupportData = (mediaFeature) => {
