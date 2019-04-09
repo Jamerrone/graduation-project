@@ -1,8 +1,8 @@
 {
   "properties": {
     "grid-area": {
-      "next": null,
-      "feedback": "Consider..."
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
     }
   }
 }

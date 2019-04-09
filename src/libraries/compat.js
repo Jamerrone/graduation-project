@@ -2,7 +2,7 @@ const {
   'at-rules': AT_RULES,
   properties: PROPERTIES,
 } = require('../api/mdn-bcd');
-const API = require('../api');
+const API = require('../api/firefly-alternatives');
 
 const checkBrowserSupport = (
     {atrules, declarations, mediaFeatures},
@@ -22,7 +22,7 @@ const checkBrowserSupport = (
     properties: declarations
         .reduce((acc, {property, loc}) => {
           const supportData = getPropertySupportData(property);
-          const feedback = getPropertyFeedback(property);
+          const feedback = getPropertyFeedback(property, browserscope);
 
           supportData &&
           acc.push(
@@ -96,9 +96,42 @@ const getPropertySupportData = (property) => {
   }
 };
 
-const getPropertyFeedback = (property) => {
+const getPropertyFeedback = (property, browserscope) => {
   try {
-    return API.properties[property].feedback;
+    if ('rawFeedback' in API.properties[property]) {
+      return API.properties[property].rawFeedback;
+    }
+
+    const next = API.properties[property].next;
+    const supportData = getPropertySupportData(next);
+    const feedback = API.properties[next].feedback;
+
+    const notSupportedBy = Object.entries(browserscope).reduce(
+        (acc, [browser, version]) => {
+          let browserSupportData = Array.isArray(supportData[browser])
+          ? supportData[browser][0]
+          : supportData[browser];
+
+          try {
+            browserSupportData = browserSupportData.version_added;
+          } catch (error) {
+            browserSupportData = null;
+          }
+
+          if (browserSupportData && browserSupportData > version) {
+            acc.push(`${browser} ${version}`);
+          }
+
+          return acc;
+        },
+        []
+    );
+
+    if (notSupportedBy.length) {
+      return getPropertyFeedback(next, browserscope);
+    } else {
+      return feedback;
+    }
   } catch (error) {
     return null;
   }

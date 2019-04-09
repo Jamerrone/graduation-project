@@ -39,7 +39,7 @@ Sprint 2:
 
   Dynamic Feedback System:
     ✔ Create a folder/file structure for storing the alternatives. @done(19-04-08 16:42)
-    ☐ Generate a feedback message for each unsupported CSS property.
+    ✔ Generate a feedback message for each unsupported CSS property. @done(19-04-09 15:20)
       Provide a list of alternatives if possible, otherwise a generic message.
       ✔ Refactor the current report system, see "report-examples". @started(19-04-02 10:18) @done(19-04-02 15:36) @lasted(5h18m44s)
   

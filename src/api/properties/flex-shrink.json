@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "flex-shrink": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    }
+  }
+}

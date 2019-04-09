@@ -1,0 +1,101 @@
+{
+  "properties": {
+    "filter": {
+      "next": null,
+      "feedback": "Consider using Filter instead.",
+      "rawFeedback": "Consider using a JavaScript library like CamanJS."
+    },
+    "flex-basis": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    },
+    "flex-direction": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    },
+    "flex-flow": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    },
+    "flex-grow": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    },
+    "flex-shrink": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    },
+    "flex-wrap": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    },
+    "flex": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    },
+    "float": {
+      "next": null,
+      "feedback": "Consider using Float instead."
+    },
+    "grid-area": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-auto-columns": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-auto-flow": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-auto-rows": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-column-end": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-column-start": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-column": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-row-end": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-row-start": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-row": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-template-areas": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-template-columns": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-template-rows": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid-template": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    },
+    "grid": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    }
+  }
+}

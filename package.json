@@ -7,7 +7,7 @@
     "firefly": "./src/index.js"
   },
   "scripts": {
-    "build": "node ./scripts/build-bcd.js > ./src/api/mdn-bcd.json",
+    "build": "node ./scripts/build-bcd.js > ./src/api/mdn-bcd.json && node ./scripts/build-firefly.js > ./src/api/firefly-alternatives.json",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
     "start": "node ./src/index.js"
   },

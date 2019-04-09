@@ -1,6 +1,6 @@
 {
   "properties": {
-    "grid-row": {
+    "grid-auto-columns": {
       "next": "flex",
       "feedback": "Consider using Grid instead."
     }
