@@ -8,20 +8,28 @@ const {printEr} = require('./libraries/utils');
 const explorer = cosmiconfig('firefly');
 const {config: appConfig = {}} = explorer.searchSync() || {};
 const args = minimist(process.argv.slice(2), {
-  alias: {i: 'input', e: 'export', w: 'watch', v: 'version', h: 'help'},
-  boolean: ['watch', 'version', 'help'],
-  string: ['input', 'export'],
+  alias: {
+    e: 'export',
+    h: 'help',
+    i: 'input',
+    j: 'json',
+    v: 'version',
+    w: 'watch',
+  },
+  boolean: ['help', 'json', 'version', 'watch'],
+  string: ['export', 'input'],
   unknown(arg) {
     return arg.startsWith('-')
       ? printEr([
         `"${arg}" is not a valid option/command. See "firefly --help".`,
         `Did you mean: ${
           stringSimilarity.findBestMatch(arg, [
-            '--input',
             '--export',
-            '--watch',
-            '--version',
             '--help',
+            '--input',
+            '--json',
+            '--version',
+            '--watch',
           ]).bestMatch.target
         }?`,
       ])
