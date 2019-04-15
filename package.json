@@ -32,7 +32,7 @@
     "cosmiconfig": "^5.2.0",
     "css-tree": "^1.0.0-alpha.29",
     "fast-glob": "^2.2.6",
-    "mdn-browser-compat-data": "0.0.73",
+    "mdn-browser-compat-data": "0.0.75",
     "minimist": "^1.2.0",
     "string-similarity": "^3.0.0"
   },
