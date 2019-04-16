@@ -1,10 +1,5 @@
 {
   "properties": {
-    "filter": {
-      "next": null,
-      "feedback": "Consider using Filter instead.",
-      "rawFeedback": "Consider using a JavaScript library like CamanJS."
-    },
     "flex-basis": {
       "next": "float",
       "feedback": "Consider using Flexbox instead."
@@ -96,6 +91,16 @@
     "grid": {
       "next": "flex",
       "feedback": "Consider using Grid instead."
+    },
+    "object-fit": {
+      "next": null,
+      "feedback": "Consider using 'object-fit' instead.",
+      "rawFeedback": "Try cropping the image or consider using 'background-size' instead."
+    },
+    "object-position": {
+      "next": null,
+      "feedback": "Consider using 'object-position' instead.",
+      "rawFeedback": "Try cropping the image or consider using 'background-position' instead."
     }
   }
 }

@@ -1,9 +1,0 @@
-{
-  "properties": {
-    "filter": {
-      "next": null,
-      "feedback": "Consider using Filter instead.",
-      "rawFeedback": "Consider using a JavaScript library like CamanJS."
-    }
-  }
-}
