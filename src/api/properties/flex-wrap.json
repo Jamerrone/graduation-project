@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "flex-wrap": {
+      "next": "float",
+      "feedback": "Consider using Flexbox instead."
+    }
+  }
+}

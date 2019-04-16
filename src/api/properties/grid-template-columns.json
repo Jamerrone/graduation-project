@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "grid-template-columns": {
+      "next": "flex",
+      "feedback": "Consider using Grid instead."
+    }
+  }
+}

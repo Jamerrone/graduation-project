@@ -41,7 +41,7 @@ const generateTables = (filePath, supportData) => {
   );
 };
 
-const generateTableRow = ({name, location, notSupported}) => {
+const generateTableRow = ({name, location, notSupported, feedback}) => {
   const formatNotSupported = (notSupported) => {
     return notSupported.length <= 3
       ? notSupported.join(', ').replace(/, ([^,]*)$/, ' & $1')
@@ -55,7 +55,7 @@ const generateTableRow = ({name, location, notSupported}) => {
     location.column
   }] ${chalk.dim(
       `${formatNotSupported(notSupported)} does not support`
-  )} '${name}'`;
+  )} '${name}'${chalk.dim(`. ${feedback}`)}`;
 };
 
 module.exports = {

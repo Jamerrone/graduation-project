@@ -1,6 +1,8 @@
 const {
-  css: {'at-rules': AT_RULES, properties: PROPERTIES},
-} = require('mdn-browser-compat-data');
+  'at-rules': AT_RULES,
+  properties: PROPERTIES,
+} = require('../api/mdn-bcd');
+const API = require('../api/firefly-alternatives');
 
 const checkBrowserSupport = (
     {atrules, declarations, mediaFeatures},
@@ -20,9 +22,12 @@ const checkBrowserSupport = (
     properties: declarations
         .reduce((acc, {property, loc}) => {
           const supportData = getPropertySupportData(property);
+          const feedback = getPropertyFeedback(property, browserscope);
 
           supportData &&
-          acc.push(formatData(browserscope, property, loc, supportData));
+          acc.push(
+              formatData(browserscope, property, loc, supportData, feedback)
+          );
 
           return acc;
         }, [])
@@ -42,29 +47,22 @@ const checkBrowserSupport = (
   };
 };
 
-const formatData = (browserscope, name, loc, supportData) => {
+const formatData = (browserscope, name, loc, supportData, feedback = null) => {
   const {line, column} = loc.start;
 
   return Object.entries(browserscope).reduce((acc, [browser, version]) => {
     acc.name = name;
     acc.location = {line, column};
+    acc.feedback = feedback || '';
     acc.supported = acc.supported || [];
     acc.notSupported = acc.notSupported || [];
     acc.unknown = acc.unknown || [];
 
-    let browserSupportData = Array.isArray(supportData[browser])
-      ? supportData[browser][0]
-      : supportData[browser];
+    const bsd = getBrowserSupportData(supportData, browser);
 
-    try {
-      browserSupportData = browserSupportData.version_added;
-    } catch (error) {
-      browserSupportData = null;
-    }
-
-    if (browserSupportData === null) {
+    if (bsd === null) {
       acc.unknown.push(`${browser} ${version}`);
-    } else if (browserSupportData && browserSupportData <= version) {
+    } else if (bsd && bsd <= version) {
       acc.supported.push(`${browser} ${version}`);
     } else {
       acc.notSupported.push(`${browser} ${version}`);
@@ -88,6 +86,43 @@ const getPropertySupportData = (property) => {
   } catch (error) {
     return false;
   }
+};
+
+const getPropertyFeedback = (property, browserscope) => {
+  try {
+    if ('rawFeedback' in API.properties[property]) {
+      return API.properties[property].rawFeedback;
+    }
+
+    const next = API.properties[property].next;
+    const supportData = getPropertySupportData(next);
+    const feedback = API.properties[next].feedback;
+
+    const isNotSupported = Object.entries(browserscope).some(
+        ([browser, version]) => {
+          const bsd = getBrowserSupportData(supportData, browser);
+          return bsd && bsd > version;
+        }
+    );
+
+    return isNotSupported ? getPropertyFeedback(next, browserscope) : feedback;
+  } catch (error) {
+    return null;
+  }
+};
+
+const getBrowserSupportData = (supportData, browser) => {
+  let browserSupportData = Array.isArray(supportData[browser])
+    ? supportData[browser][0]
+    : supportData[browser];
+
+  try {
+    browserSupportData = browserSupportData.version_added;
+  } catch (error) {
+    browserSupportData = null;
+  }
+
+  return browserSupportData;
 };
 
 const getMediaFeatureSupportData = (mediaFeature) => {
