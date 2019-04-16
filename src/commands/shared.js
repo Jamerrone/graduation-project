@@ -79,11 +79,15 @@ ${chalk.cyan('[firefly] watching:')} ${filePaths
     const {e, r} = getExportAndReport(filePaths, browserslist);
 
     if ('export' in args) {
+      const json = JSON.stringify(e, null, 2);
       let exportPath = args.export || 'report.json';
       if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
-      writeFile(`${exportPath}`, JSON.stringify(e, null, 2));
+      writeFile(`${exportPath}`, json);
+      printLn(json);
+    } else if (args.json) {
+      printLn(JSON.stringify(e, null, 2));
+    } else {
+      printLn(r.join('\n\n'));
     }
-
-    printLn(r.join('\n\n'));
   }
 };

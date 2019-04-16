@@ -8,7 +8,9 @@ module.exports = () => {
     `       firefly [${chalk.cyan('-i | --input <path>')}] [${chalk.cyan(
         '-e | --export <path>'
     )}] [${chalk.cyan('-w | --watch')}]
-       [${chalk.cyan('-h | --help')}] [${chalk.cyan('-v | --version')}]`,
+       [${chalk.cyan('-j | --json')}] [${chalk.cyan(
+    '-h | --help'
+)}] [${chalk.cyan('-v | --version')}]`,
     '',
     `${chalk.bold('Options:')}`,
     `   ${chalk.cyan('-i, --input <path>')}    Specify the input file path.`,
@@ -18,6 +20,9 @@ module.exports = () => {
     '',
     `${chalk.bold('Flags:')}`,
     `   ${chalk.cyan('-w, --watch')}           Rerun firefly on file change.`,
+    `   ${chalk.cyan(
+        '-j, --json'
+    )}            Output firefly's report in JSON format.`,
     `   ${chalk.cyan('-h, --help')}            Output usage information.`,
     `   ${chalk.cyan('-v, --version')}         Output the version number.`,
   ]);
