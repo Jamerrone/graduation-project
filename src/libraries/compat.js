@@ -98,7 +98,7 @@ const getPropertyFeedback = (property, browserscope) => {
     const supportData = getPropertySupportData(next);
     const feedback = API.properties[next].feedback;
 
-    const isNotSupported = Object.entries(browserscope).every(
+    const isNotSupported = Object.entries(browserscope).some(
         ([browser, version]) => {
           const bsd = getBrowserSupportData(supportData, browser);
           return bsd && bsd > version;

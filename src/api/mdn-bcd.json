@@ -32,7 +32,7 @@
             "version_added": "9"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "4"
@@ -775,7 +775,7 @@
             "version_added": "10"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -825,7 +825,7 @@
               "version_added": "11.1"
             },
             "opera_android": {
-              "version_added": "11"
+              "version_added": "11.1"
             },
             "safari": {
               "version_added": "5.1"
@@ -900,7 +900,7 @@
               "version_added": "23"
             },
             "opera_android": {
-              "version_added": "23"
+              "version_added": "24"
             },
             "safari": {
               "version_added": "10",
@@ -1003,7 +1003,7 @@
               "version_added": "47"
             },
             "opera_android": {
-              "version_added": "47"
+              "version_added": "44"
             },
             "safari": {
               "version_added": true
@@ -1054,7 +1054,7 @@
               "version_added": "10"
             },
             "opera_android": {
-              "version_added": "12"
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "3.1"
@@ -1236,7 +1236,7 @@
               "version_added": "10"
             },
             "opera_android": {
-              "version_added": "10"
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "3.1"
@@ -1286,7 +1286,7 @@
               "version_added": "10"
             },
             "opera_android": {
-              "version_added": "10"
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "3.1"
@@ -1337,7 +1337,7 @@
               "version_added": "10"
             },
             "opera_android": {
-              "version_added": "12"
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "3.1"
@@ -2171,11 +2171,15 @@
           ],
           "opera_android": [
             {
-              "version_added": "12.1"
+              "version_added": "30"
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
+            },
+            {
+              "version_added": "12.1",
+              "version_removed": "14"
             },
             {
               "prefix": "-o-",
@@ -2308,7 +2312,7 @@
             "version_added": "9.2"
           },
           "opera_android": {
-            "version_added": "9"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.3"
@@ -2500,10 +2504,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
               "version_added": null
@@ -2616,7 +2620,7 @@
               "version_added": "45"
             },
             "opera_android": {
-              "version_added": "45"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -3187,7 +3191,7 @@
               "version_added": "9.2"
             },
             "opera_android": {
-              "version_added": "9"
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": "1.3"
@@ -3238,7 +3242,7 @@
               "version_added": "53"
             },
             "opera_android": {
-              "version_added": "53"
+              "version_added": "47"
             },
             "safari": {
               "version_added": false
@@ -3812,7 +3816,7 @@
               "version_added": "9.2"
             },
             "opera_android": {
-              "version_added": "9"
+              "version_added": "10.1"
             },
             "safari": {
               "version_added": false
@@ -4926,9 +4930,26 @@
               "version_removed": "15"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "16",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-experimental-webkit-features"
+                },
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-viewport"
+                }
+              ]
+            },
+            {
+              "prefix": "-o-",
+              "version_added": "11.1",
+              "version_removed": "14"
+            }
+          ],
           "safari": {
             "version_added": false,
             "notes": "See WebKit <a href='https://webkit.org/b/95959'>bug 95959</a>."
@@ -5301,9 +5322,15 @@
                 "version_removed": "15"
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "14"
+              }
+            ],
             "safari": {
               "version_added": false
             },
@@ -5410,8 +5437,9 @@
               "version_added": false
             },
             "opera_android": {
-              "prefix": "-o-",
-              "version_added": "8"
+              "version_added": "11",
+              "version_removed": "14",
+              "prefix": "-o-"
             },
             "safari": {
               "version_added": false
@@ -5621,7 +5649,7 @@
               "version_added": "16"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "16"
             },
             "safari": {
               "version_added": false
@@ -7192,7 +7220,7 @@
             "version_added": "15"
           },
           "opera_android": {
-            "version_added": "22"
+            "version_added": "14"
           },
           "safari": {
             "version_added": "4"
@@ -7954,7 +7982,7 @@
             "version_added": "15"
           },
           "opera_android": {
-            "version_added": "36"
+            "version_added": "14"
           },
           "safari": {
             "version_added": "3.1"
@@ -8178,7 +8206,7 @@
                 "version_added": "47"
               },
               "opera_android": {
-                "version_added": "47"
+                "version_added": "44"
               },
               "safari": {
                 "version_added": "11"
@@ -8369,7 +8397,7 @@
                 "version_added": "44"
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": "43"
               },
               "safari": {
                 "version_added": null
@@ -8471,7 +8499,7 @@
                 "version_added": "44"
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": "43"
               },
               "safari": {
                 "version_added": "9"
@@ -8575,7 +8603,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -8991,7 +9019,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -9554,7 +9582,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -9783,7 +9811,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -9948,7 +9976,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -10209,7 +10237,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -10370,7 +10398,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -10541,7 +10569,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -10712,7 +10740,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -10883,7 +10911,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -11054,7 +11082,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -11276,7 +11304,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "12.1",
@@ -11806,7 +11834,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -11856,7 +11884,7 @@
               "version_added": "10.5"
             },
             "opera_android": {
-              "version_added": "10"
+              "version_added": "11"
             },
             "safari": {
               "version_added": "1.3"
@@ -12055,7 +12083,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "12.1"
+              "version_added": "11"
             },
             {
               "version_added": "14",
@@ -12120,7 +12148,7 @@
               "version_added": "10.5"
             },
             "opera_android": {
-              "version_added": "12.1"
+              "version_added": "11"
             },
             "safari": {
               "version_added": "3"
@@ -12703,7 +12731,7 @@
             },
             "opera_android": {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             "safari": {
               "prefix": "-webkit-",
@@ -12858,7 +12886,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "12.1"
+              "version_added": "11"
             },
             {
               "version_added": "14",
@@ -12936,7 +12964,7 @@
               "version_added": "10.5"
             },
             "opera_android": {
-              "version_added": "12.1"
+              "version_added": "11"
             },
             "safari": {
               "version_added": "3"
@@ -13592,9 +13620,22 @@
               "notes": "Opera 9.5's computation of the background positioning area is incorrect for fixed backgrounds. Opera 9.5 also interprets the two-value form as a horizontal scaling factor and, from appearances, a vertical clipping dimension. This has been fixed in Opera 10."
             }
           ],
-          "opera_android": {
-            "version_added": true
-          },
+          "opera_android": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "version_added": "14",
+              "prefix": "-webkit-",
+              "notes": "WebKit-based browsers originally implemented an older draft of CSS3 <code>background-size</code> in which an omitted second value is treated as duplicating the first value; this draft does not include the <code>contain</code> or <code>cover</code> keywords."
+            },
+            {
+              "version_added": "10.1",
+              "version_removed": "14",
+              "prefix": "-o-",
+              "notes": "Opera 9.5's computation of the background positioning area is incorrect for fixed backgrounds. Opera 9.5 also interprets the two-value form as a horizontal scaling factor and, from appearances, a vertical clipping dimension. This has been fixed in Opera 10."
+            }
+          ],
           "safari": [
             {
               "version_added": "4.1"
@@ -13760,7 +13801,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -14092,7 +14133,7 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "version_added": false
@@ -14154,7 +14195,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -14217,7 +14258,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -14269,7 +14310,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -14403,7 +14444,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -14474,7 +14515,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -14545,7 +14586,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -14687,7 +14728,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -14758,7 +14799,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -14829,7 +14870,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -15121,7 +15162,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -15581,7 +15622,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -15671,7 +15712,7 @@
             "version_added": "4"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.2"
@@ -15718,7 +15759,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -16209,17 +16250,24 @@
           },
           "opera": [
             {
-              "version_added": "10.5"
+              "version_added": "11"
             },
             {
-              "prefix": "-o-",
-              "version_added": "11"
+              "version_added": "10.5",
+              "version_removed": "15",
+              "prefix": "-o-"
             }
           ],
-          "opera_android": {
-            "prefix": "-o-",
-            "version_added": "11"
-          },
+          "opera_android": [
+            {
+              "version_added": "11"
+            },
+            {
+              "version_added": "11",
+              "version_removed": "14",
+              "prefix": "-o-"
+            }
+          ],
           "safari": [
             {
               "version_added": "6"
@@ -16485,7 +16533,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -16564,7 +16612,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -16643,7 +16691,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -16788,7 +16836,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -16867,7 +16915,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -16938,7 +16986,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -17225,7 +17273,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -17323,7 +17371,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -17455,7 +17503,7 @@
             "notes": "In Opera prior to version 11.60, replaced elements with <code>border-radius</code> will not have rounded corners."
           },
           "opera_android": {
-            "version_added": ""
+            "version_added": "11"
           },
           "safari": [
             {
@@ -17662,7 +17710,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -17754,7 +17802,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -18031,7 +18079,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -18482,7 +18530,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -18572,7 +18620,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "11"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -18822,7 +18870,7 @@
           "opera_android": [
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "version_added": "11.5",
@@ -18987,7 +19035,7 @@
           },
           "opera_android": {
             "version_added": true,
-            "version_removed": "54",
+            "version_removed": "48",
             "prefix": "-webkit-"
           },
           "safari": [
@@ -19155,7 +19203,7 @@
           },
           "opera_android": {
             "version_added": true,
-            "version_removed": "54",
+            "version_removed": "48",
             "prefix": "-webkit-"
           },
           "safari": [
@@ -20028,9 +20076,15 @@
                 "version_removed": "12.1"
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
             "safari": {
               "version_added": false
             },
@@ -20239,9 +20293,15 @@
                 "version_removed": "12.1"
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
             "safari": {
               "version_added": "10"
             },
@@ -20506,9 +20566,15 @@
                 "version_removed": "12.1"
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
             "safari": {
               "version_added": false
             },
@@ -20717,9 +20783,15 @@
                 "version_removed": "12.1"
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
             "safari": {
               "version_added": "10"
             },
@@ -20984,9 +21056,15 @@
                 "version_removed": "12.1"
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
             "safari": {
               "version_added": "10"
             },
@@ -21093,9 +21171,15 @@
                 "version_removed": "12.1"
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
             "safari": {
               "version_added": "10"
             },
@@ -21403,7 +21487,7 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "version_added": "11.1"
@@ -21454,7 +21538,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -22638,13 +22722,13 @@
               "version_added": "52"
             },
             "opera_android": {
-              "version_added": "52"
+              "version_added": "47"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "12.2"
             },
             "samsunginternet_android": {
               "version_added": null
@@ -22689,13 +22773,13 @@
               "version_added": "53"
             },
             "opera_android": {
-              "version_added": "53"
+              "version_added": "47"
             },
             "safari": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "12.2"
             },
             "webview_android": {
               "version_added": "66"
@@ -23092,11 +23176,21 @@
             ],
             "opera_android": [
               {
-                "version_added": "53"
+                "version_added": "47"
               },
               {
-                "version_added": "44",
+                "version_added": "43",
                 "alternative_name": "grid-gap"
+              },
+              {
+                "version_added": "28",
+                "alternative_name": "grid-gap",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
               }
             ],
             "qq_android": {
@@ -23223,7 +23317,7 @@
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "15"
+                "version_added": "14"
               },
               {
                 "version_added": "11.1",
@@ -23311,7 +23405,7 @@
                 "version_added": "53"
               },
               "opera_android": {
-                "version_added": "53"
+                "version_added": "47"
               },
               "qq_android": {
                 "version_added": false
@@ -23371,7 +23465,7 @@
                 "version_added": "53"
               },
               "opera_android": {
-                "version_added": "53"
+                "version_added": "47"
               },
               "qq_android": {
                 "version_added": false
@@ -23835,9 +23929,15 @@
               "version_added": "15"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "11.1"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "14"
+            }
+          ],
           "safari": {
             "prefix": "-webkit-",
             "version_added": true
@@ -24125,11 +24225,11 @@
           ],
           "opera_android": [
             {
-              "version_added": "11.5"
+              "version_added": "11.1"
             },
             {
               "prefix": "-webkit-",
-              "version_added": "32"
+              "version_added": "14"
             }
           ],
           "safari": {
@@ -24250,7 +24350,7 @@
             "version_added": "40"
           },
           "opera_android": {
-            "version_added": "40"
+            "version_added": "41"
           },
           "safari": {
             "version_added": false
@@ -24298,7 +24398,7 @@
             "version_added": "4"
           },
           "opera_android": {
-            "version_added": "9.5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -24452,7 +24552,7 @@
             "version_added": "9.2"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -24503,7 +24603,7 @@
             "version_added": "9.2"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -25798,9 +25898,16 @@
                 "version_removed": "23"
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "24"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "14",
+                "version_removed": "24"
+              }
+            ],
             "safari": [
               {
                 "version_added": "9"
@@ -26162,7 +26269,7 @@
               "version_added": "36"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "36"
             },
             "safari": {
               "version_added": true
@@ -26268,7 +26375,7 @@
             "version_added": "9.2"
           },
           "opera_android": {
-            "version_added": "8"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.3"
@@ -27055,7 +27162,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -27115,7 +27222,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -27362,7 +27469,7 @@
               "version_added": "45"
             },
             "opera_android": {
-              "version_added": "45"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -27437,7 +27544,7 @@
               "version_added": "52"
             },
             "opera_android": {
-              "version_added": "52"
+              "version_added": "47"
             },
             "safari": {
               "version_added": "11.1"
@@ -27988,7 +28095,7 @@
             "version_added": "4"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.2"
@@ -28122,11 +28229,11 @@
           ],
           "opera_android": [
             {
-              "version_added": "40"
+              "version_added": "41"
             },
             {
               "prefix": "-webkit-",
-              "version_added": "22"
+              "version_added": "14"
             }
           ],
           "safari": {
@@ -28331,7 +28438,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             }
           ],
           "safari": [
@@ -28671,7 +28778,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             }
           ],
           "safari": [
@@ -28789,7 +28896,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             }
           ],
           "safari": [
@@ -28925,7 +29032,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             }
           ],
           "safari": {
@@ -29122,7 +29229,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             }
           ],
           "safari": {
@@ -29192,7 +29299,7 @@
             "version_added": "17"
           },
           "opera_android": {
-            "version_added": "12.1"
+            "version_added": "18"
           },
           "safari": {
             "version_added": "9"
@@ -29427,7 +29534,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -29529,7 +29636,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -29669,9 +29776,15 @@
               "version_added": "15"
             }
           ],
-          "opera_android": {
-            "version_added": true
-          },
+          "opera_android": [
+            {
+              "version_added": "35"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "14"
+            }
+          ],
           "safari": [
             {
               "version_added": "9.1"
@@ -30049,7 +30162,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -30110,7 +30223,7 @@
               "version_added": "28"
             },
             "opera_android": {
-              "version_added": "12"
+              "version_added": "28"
             },
             "safari": {
               "version_added": "7"
@@ -30219,7 +30332,7 @@
             "version_added": "47"
           },
           "opera_android": {
-            "version_added": "47"
+            "version_added": "44"
           },
           "safari": {
             "version_added": "11"
@@ -30323,7 +30436,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -31060,7 +31173,7 @@
             "version_added": "39"
           },
           "opera_android": {
-            "version_added": "39"
+            "version_added": "41"
           },
           "safari": {
             "version_added": false
@@ -31137,7 +31250,7 @@
             "version_added": "50"
           },
           "opera_android": {
-            "version_added": "50"
+            "version_added": "46"
           },
           "safari": {
             "version_added": false
@@ -31225,9 +31338,15 @@
               "version_added": "19"
             }
           ],
-          "opera_android": {
-            "version_added": "21"
-          },
+          "opera_android": [
+            {
+              "version_added": "21"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "19"
+            }
+          ],
           "safari": [
             {
               "version_added": "9.1"
@@ -31321,7 +31440,7 @@
             "version_added": "39"
           },
           "opera_android": {
-            "version_added": "39"
+            "version_added": "41"
           },
           "safari": {
             "version_added": "9.1"
@@ -31756,7 +31875,7 @@
             "version_added": "49"
           },
           "opera_android": {
-            "version_added": "49"
+            "version_added": "46"
           },
           "safari": {
             "version_added": "11",
@@ -31809,7 +31928,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.3"
@@ -32216,11 +32335,21 @@
             ],
             "opera_android": [
               {
-                "version_added": "53"
+                "version_added": "47"
               },
               {
-                "version_added": "44",
+                "version_added": "43",
                 "alternative_name": "grid-gap"
+              },
+              {
+                "version_added": "28",
+                "alternative_name": "grid-gap",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
               }
             ],
             "qq_android": {
@@ -32289,7 +32418,7 @@
                 "version_added": "53"
               },
               "opera_android": {
-                "version_added": "53"
+                "version_added": "47"
               },
               "qq_android": {
                 "version_added": false
@@ -32349,7 +32478,7 @@
                 "version_added": "53"
               },
               "opera_android": {
-                "version_added": "53"
+                "version_added": "47"
               },
               "qq_android": {
                 "version_added": false
@@ -32411,7 +32540,7 @@
               "version_added": "53"
             },
             "opera_android": {
-              "version_added": "53"
+              "version_added": "47"
             },
             "qq_android": {
               "version_added": null
@@ -32528,9 +32657,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -32644,9 +32784,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -32752,9 +32903,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -32868,9 +33030,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -32976,9 +33149,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33095,9 +33279,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33214,9 +33409,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33333,9 +33539,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33441,9 +33658,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33549,9 +33777,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33657,9 +33896,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33765,9 +34015,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -33862,9 +34123,20 @@
                 ]
               }
             ],
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": [
+              {
+                "version_added": "43"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
@@ -33974,9 +34246,20 @@
                 ]
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "43"
+              },
+              {
+                "version_added": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
@@ -34027,7 +34310,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -34187,9 +34470,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -34284,9 +34578,20 @@
                 ]
               }
             ],
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": [
+              {
+                "version_added": "43"
+              },
+              {
+                "version_added": "28",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
@@ -34384,9 +34689,20 @@
                 ]
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "43"
+              },
+              {
+                "version_added": true,
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
+              }
+            ],
             "safari": {
               "version_added": "10.1"
             },
@@ -34437,7 +34753,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -34596,9 +34912,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -34704,9 +35031,20 @@
               ]
             }
           ],
-          "opera_android": {
-            "version_added": "44"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "28",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Enable experimental Web Platform features"
+                }
+              ]
+            }
+          ],
           "safari": {
             "version_added": "10.1"
           },
@@ -34813,7 +35151,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "1"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -34875,7 +35213,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -34938,7 +35276,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -35130,7 +35468,7 @@
             "notes": "<code>auto</code> value is only supported on macOS and Android."
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "prefix": "-webkit-",
@@ -36259,7 +36597,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -37077,7 +37415,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "5.1",
@@ -37348,7 +37686,7 @@
               "version_added": "26"
             },
             "opera_android": {
-              "version_added": "28"
+              "version_added": "26"
             },
             "safari": {
               "version_added": null
@@ -37684,7 +38022,7 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "version_added": false
@@ -37746,7 +38084,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -37809,7 +38147,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -37861,7 +38199,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -37964,7 +38302,7 @@
             ]
           },
           "opera_android": {
-            "version_added": "56",
+            "version_added": "48",
             "flags": [
               {
                 "type": "preference",
@@ -38072,7 +38410,7 @@
             ]
           },
           "opera_android": {
-            "version_added": "56",
+            "version_added": "48",
             "flags": [
               {
                 "type": "preference",
@@ -38187,7 +38525,7 @@
             ]
           },
           "opera_android": {
-            "version_added": "56",
+            "version_added": "48",
             "flags": [
               {
                 "type": "preference",
@@ -38295,7 +38633,7 @@
             ]
           },
           "opera_android": {
-            "version_added": "56",
+            "version_added": "48",
             "flags": [
               {
                 "type": "preference",
@@ -38403,7 +38741,7 @@
             ]
           },
           "opera_android": {
-            "version_added": "56",
+            "version_added": "48",
             "flags": [
               {
                 "type": "preference",
@@ -38518,7 +38856,7 @@
             ]
           },
           "opera_android": {
-            "version_added": "56",
+            "version_added": "48",
             "flags": [
               {
                 "type": "preference",
@@ -38804,7 +39142,7 @@
                 "version_added": "47"
               },
               "opera_android": {
-                "version_added": "47"
+                "version_added": "44"
               },
               "safari": {
                 "version_added": "11"
@@ -39197,7 +39535,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -39303,7 +39641,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -39357,7 +39695,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -39409,7 +39747,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": "10.1"
@@ -39639,7 +39977,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "45"
+              "version_added": "43"
             },
             {
               "prefix": "-webkit-",
@@ -39725,7 +40063,7 @@
             ]
           },
           "opera_android": {
-            "version_added": "47",
+            "version_added": "44",
             "flags": [
               {
                 "type": "runtime_flag",
@@ -39785,7 +40123,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -39895,7 +40233,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -40383,9 +40721,16 @@
                 "notes": "Until version 15, only decimal numbers display."
               }
             ],
-            "opera_android": {
-              "version_added": null
-            },
+            "opera_android": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": "Until version 15, only decimal numbers display."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -40874,9 +41219,16 @@
                 "notes": "Until version 15, only decimal numbers display."
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": "Until version 15, only decimal numbers display."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -40932,9 +41284,16 @@
                 "notes": "Until version 15, only decimal numbers display."
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": "Until version 15, only decimal numbers display."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -40990,9 +41349,16 @@
                 "notes": "Until version 15, only decimal numbers display."
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": "Until version 15, only decimal numbers display."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -41219,9 +41585,16 @@
                 "notes": "Until version 15, only decimal numbers display."
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": "Until version 15, only decimal numbers display."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -41277,9 +41650,16 @@
                 "notes": "Until version 15, only decimal numbers display."
               }
             ],
-            "opera_android": {
-              "version_added": true
-            },
+            "opera_android": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "10.1",
+                "partial_implementation": true,
+                "notes": "Until version 15, only decimal numbers display."
+              }
+            ],
             "safari": {
               "version_added": null
             },
@@ -42530,7 +42910,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -42658,7 +43038,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -42735,7 +43115,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -42844,7 +43224,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -43000,7 +43380,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "56"
+              "version_added": "48"
             },
             {
               "version_added": "14",
@@ -43118,7 +43498,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "56"
+              "version_added": "48"
             },
             {
               "version_added": "14",
@@ -43241,7 +43621,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -43344,7 +43724,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -43447,7 +43827,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -43550,7 +43930,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -44749,9 +45129,18 @@
               "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": true,
+              "partial_implementation": true,
+              "notes": "While the property is recognized, values applied to it don't have any effect."
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": true,
+              "notes": "The prefixed property can be used with SVG and HTML with a slightly different syntax, which allows setting the non-standard <a href='https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment'><code>-webkit-mask-attachment</code></a> property."
+            }
+          ],
           "safari": [
             {
               "version_added": "4",
@@ -44949,7 +45338,7 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "version_added": false
@@ -45011,7 +45400,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -45074,7 +45463,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -45125,7 +45514,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -45242,7 +45631,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -45305,7 +45694,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -45424,7 +45813,7 @@
                 "version_added": "44"
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": "43"
               },
               "safari": [
                 {
@@ -45516,7 +45905,7 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "prefix": "-webkit-",
@@ -45580,7 +45969,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -45643,7 +46032,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -45695,7 +46084,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -45818,7 +46207,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": [
               {
@@ -45900,7 +46289,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": [
               {
@@ -46020,7 +46409,7 @@
                 "version_added": "44"
               },
               "opera_android": {
-                "version_added": "44"
+                "version_added": "43"
               },
               "safari": [
                 {
@@ -46112,7 +46501,7 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "version_added": false
@@ -46174,7 +46563,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -46237,7 +46626,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -46288,7 +46677,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -46406,7 +46795,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -46469,7 +46858,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -46586,7 +46975,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": [
               {
@@ -46730,7 +47119,7 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
           "safari": {
             "version_added": false
@@ -46909,7 +47298,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": false
@@ -47118,7 +47507,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": [
               {
@@ -47480,11 +47869,11 @@
           ],
           "opera_android": [
             {
-              "version_added": "24"
+              "version_added": "19"
             },
             {
               "prefix": "-o-",
-              "version_added": "11.5"
+              "version_added": "12"
             }
           ],
           "safari": {
@@ -47543,11 +47932,11 @@
           ],
           "opera_android": [
             {
-              "version_added": "24"
+              "version_added": "19"
             },
             {
               "prefix": "-o-",
-              "version_added": "11.5"
+              "version_added": "12"
             }
           ],
           "safari": {
@@ -47706,7 +48095,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "45",
+              "version_added": "43",
               "notes": "<code>path()</code> is the only value type supported."
             },
             {
@@ -47757,10 +48146,10 @@
               "version_added": null
             },
             "firefox": {
-              "version_added": null
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
               "version_added": null
@@ -47769,7 +48158,7 @@
               "version_added": "51"
             },
             "opera_android": {
-              "version_added": "51"
+              "version_added": "47"
             },
             "safari": {
               "version_added": null
@@ -47978,7 +48367,7 @@
             "version_added": "9"
           },
           "opera_android": {
-            "version_added": "9"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.2"
@@ -48457,7 +48846,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "12"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.2"
@@ -48495,10 +48884,10 @@
               "version_added": false
             },
             "firefox": {
-              "version_added": null
+              "version_added": true
             },
             "firefox_android": {
-              "version_added": null
+              "version_added": true
             },
             "ie": {
               "version_added": null
@@ -48625,7 +49014,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "7"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.2"
@@ -48962,9 +49351,15 @@
               "version_added": "10.5"
             }
           ],
-          "opera_android": {
-            "version_added": "46"
-          },
+          "opera_android": [
+            {
+              "version_added": "12.1"
+            },
+            {
+              "alternative_name": "word-wrap",
+              "version_added": "11"
+            }
+          ],
           "safari": [
             {
               "version_added": "6.1"
@@ -49031,7 +49426,7 @@
               "version_added": "10.5"
             },
             "opera_android": {
-              "version_added": "46"
+              "version_added": "11"
             },
             "safari": {
               "version_added": "1"
@@ -49300,7 +49695,7 @@
               "version_added": "55"
             },
             "opera_android": {
-              "version_added": "55"
+              "version_added": "48"
             },
             "safari": {
               "version_added": false
@@ -49354,7 +49749,7 @@
             "version_added": "50"
           },
           "opera_android": {
-            "version_added": "50"
+            "version_added": "46"
           },
           "safari": {
             "version_added": false
@@ -49407,7 +49802,7 @@
             "version_added": "50"
           },
           "opera_android": {
-            "version_added": "50"
+            "version_added": "46"
           },
           "safari": {
             "version_added": false
@@ -49460,7 +49855,7 @@
             "version_added": "50"
           },
           "opera_android": {
-            "version_added": "50"
+            "version_added": "46"
           },
           "safari": {
             "version_added": false
@@ -49537,7 +49932,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -49614,7 +50009,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -49827,7 +50222,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "56"
+              "version_added": "48"
             },
             {
               "version_added": "14",
@@ -49945,7 +50340,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "56"
+              "version_added": "48"
             },
             {
               "version_added": "14",
@@ -51227,7 +51622,7 @@
             },
             "ie": {
               "version_added": "7",
-              "notes": "In Internet Explorer, fixed positioning doesn't work if the document is in <a href='http://msdn.microsoft.com/en-us/library/ie/ms531140(v=vs.85).aspx'>quirks mode</a>."
+              "notes": "In Internet Explorer, fixed positioning doesn't work if the document is in <a href='https://developer.mozilla.org/docs/Web/HTML/Quirks_Mode_and_Standards_Mode'>quirks mode</a>."
             },
             "opera": {
               "version_added": "4"
@@ -51998,11 +52393,21 @@
             ],
             "opera_android": [
               {
-                "version_added": "53"
+                "version_added": "47"
               },
               {
-                "version_added": "44",
+                "version_added": "43",
                 "alternative_name": "grid-row-gap"
+              },
+              {
+                "version_added": "28",
+                "alternative_name": "grid-row-gap",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "Enable experimental Web Platform features"
+                  }
+                ]
               }
             ],
             "qq_android": {
@@ -52296,7 +52701,7 @@
             "version_added": "48"
           },
           "opera_android": {
-            "version_added": "48"
+            "version_added": "45"
           },
           "safari": {
             "version_added": false
@@ -52347,7 +52752,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52398,7 +52803,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52449,7 +52854,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -52500,7 +52905,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52551,7 +52956,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52602,7 +53007,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52704,7 +53109,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52755,7 +53160,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52806,7 +53211,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52857,7 +53262,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52908,7 +53313,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -52959,7 +53364,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53010,7 +53415,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -53061,7 +53466,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53112,7 +53517,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53163,7 +53568,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53214,7 +53619,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": false
@@ -53265,7 +53670,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53316,7 +53721,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53367,7 +53772,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53418,7 +53823,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53469,7 +53874,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": {
             "version_added": "11"
@@ -53973,7 +54378,7 @@
             "version_added": "56"
           },
           "opera_android": {
-            "version_added": "56"
+            "version_added": "48"
           },
           "safari": [
             {
@@ -54829,11 +55234,11 @@
           ],
           "opera_android": [
             {
-              "version_added": "24"
+              "version_added": "14"
             },
             {
               "prefix": "-o-",
-              "version_added": "11.5"
+              "version_added": "11"
             }
           ],
           "safari": {
@@ -54885,7 +55290,7 @@
               "version_added": "29"
             },
             "opera_android": {
-              "version_added": "37"
+              "version_added": "29"
             },
             "safari": {
               "version_added": false
@@ -54937,7 +55342,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "9.8"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -55502,9 +55907,17 @@
               "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
             }
           ],
-          "opera_android": {
-            "version_added": false
-          },
+          "opera_android": [
+            {
+              "version_added": true
+            },
+            {
+              "partial_implementation": true,
+              "alternative_name": "-webkit-text-combine",
+              "version_added": true,
+              "notes": "This property was initially named <code>-webkit-text-combine</code> according to a <a href='http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/#text-combine'>2011 version of the CSS3 Writing Modes specification</a>, supporting the values <code>none</code> and <code>horizontal</code> without digits."
+            }
+          ],
           "safari": {
             "partial_implementation": true,
             "alternative_name": "-webkit-text-combine",
@@ -55638,16 +56051,26 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
-          "safari": {
-            "prefix": "-webkit-",
-            "version_added": true
-          },
-          "safari_ios": {
-            "prefix": "-webkit-",
-            "version_added": "8"
-          },
+          "safari": [
+            {
+              "version_added": "12.1"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": true
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "12.2"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "8"
+            }
+          ],
           "samsunginternet_android": {
             "version_added": "7.0"
           },
@@ -55707,14 +56130,24 @@
           "opera_android": {
             "version_added": true
           },
-          "safari": {
-            "prefix": "-webkit-",
-            "version_added": true
-          },
-          "safari_ios": {
-            "prefix": "-webkit-",
-            "version_added": "8"
-          },
+          "safari": [
+            {
+              "version_added": "12.1"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": true
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "12.2"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "8"
+            }
+          ],
           "samsunginternet_android": {
             "version_added": true
           },
@@ -55761,7 +56194,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -55814,7 +56247,7 @@
             "version_added": "50"
           },
           "opera_android": {
-            "version_added": "50"
+            "version_added": "46"
           },
           "safari": {
             "version_added": false
@@ -55871,20 +56304,32 @@
             "notes": "Only supports the deprecated <code>ink</code> value."
           },
           "opera_android": {
-            "version_added": "44",
-            "version_removed": "50",
+            "version_added": "43",
+            "version_removed": "46",
             "notes": "Only supports the deprecated <code>ink</code> value."
           },
-          "safari": {
-            "version_added": "8",
-            "prefix": "-webkit-",
-            "notes": "Only supports the <code>none</code> and <code>skip</code> values; all other values behave like those two values."
-          },
-          "safari_ios": {
-            "version_added": "8",
-            "prefix": "-webkit-",
-            "notes": "Only supports the <code>none</code> and <code>skip</code> values; all other values behave like those two values."
-          },
+          "safari": [
+            {
+              "version_added": "12.1",
+              "notes": "Only supports the <code>none</code> and <code>skip</code> values; all other values behave like those two values."
+            },
+            {
+              "version_added": "8",
+              "prefix": "-webkit-",
+              "notes": "Only supports the <code>none</code> and <code>skip</code> values; all other values behave like those two values."
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "12.2",
+              "notes": "Only supports the <code>none</code> and <code>skip</code> values; all other values behave like those two values."
+            },
+            {
+              "version_added": "8",
+              "prefix": "-webkit-",
+              "notes": "Only supports the <code>none</code> and <code>skip</code> values; all other values behave like those two values."
+            }
+          ],
           "samsunginternet_android": {
             "version_added": "7.0"
           },
@@ -55944,16 +56389,26 @@
             "version_added": "44"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "43"
           },
-          "safari": {
-            "prefix": "-webkit-",
-            "version_added": true
-          },
-          "safari_ios": {
-            "prefix": "-webkit-",
-            "version_added": true
-          },
+          "safari": [
+            {
+              "version_added": "12.1"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": true
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "12.2"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": true
+            }
+          ],
           "samsunginternet_android": {
             "version_added": "7.0"
           },
@@ -55996,7 +56451,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": true
@@ -56120,10 +56575,15 @@
                 "version_added": "4"
               }
             ],
-            "opera_android": {
-              "version_added": "4",
-              "notes": "The <code>blink</code> value does not have any effect."
-            },
+            "opera_android": [
+              {
+                "version_added": "14",
+                "notes": "The <code>blink</code> value does not have any effect."
+              },
+              {
+                "version_added": "10.1"
+              }
+            ],
             "safari": {
               "version_added": true,
               "notes": "The <code>blink</code> value does not have any effect."
@@ -56271,7 +56731,7 @@
           },
           "opera_android": {
             "prefix": "-webkit-",
-            "version_added": "33"
+            "version_added": "14"
           },
           "safari": [
             {
@@ -56372,7 +56832,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "33"
+              "version_added": "14"
             }
           ],
           "safari": [
@@ -56435,7 +56895,7 @@
               "version_added": "49"
             },
             "opera_android": {
-              "version_added": "49"
+              "version_added": "46"
             },
             "safari": {
               "version_added": true
@@ -56516,7 +56976,7 @@
           },
           "opera_android": {
             "prefix": "-webkit-",
-            "version_added": "33"
+            "version_added": "14"
           },
           "safari": [
             {
@@ -56603,7 +57063,7 @@
           },
           "opera_android": {
             "prefix": "-webkit-",
-            "version_added": "33"
+            "version_added": "14"
           },
           "safari": [
             {
@@ -57068,9 +57528,15 @@
               "version_added": "9"
             }
           ],
-          "opera_android": {
-            "version_added": true
-          },
+          "opera_android": [
+            {
+              "version_added": "11"
+            },
+            {
+              "prefix": "-o-",
+              "version_added": "10.1"
+            }
+          ],
           "safari": {
             "version_added": "1.3"
           },
@@ -57332,7 +57798,7 @@
             "version_added": "15"
           },
           "opera_android": {
-            "version_added": "36"
+            "version_added": "14"
           },
           "safari": {
             "version_added": "5"
@@ -58851,7 +59317,7 @@
             "version_added": "51"
           },
           "opera_android": {
-            "version_added": "51"
+            "version_added": "47"
           },
           "safari": {
             "version_added": null
@@ -58968,9 +59434,15 @@
               "version_added": "10.5"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "12.1"
+            },
+            {
+              "prefix": "-o-",
+              "version_added": "11"
+            }
+          ],
           "safari": {
             "prefix": "-webkit-",
             "version_added": "3.1"
@@ -59310,11 +59782,15 @@
           ],
           "opera": [
             {
-              "version_added": "12.1"
+              "version_added": "23"
             },
             {
               "prefix": "-webkit-",
               "version_added": "15"
+            },
+            {
+              "version_added": "12.1",
+              "version_removed": "15"
             },
             {
               "prefix": "-o-",
@@ -59322,10 +59798,24 @@
               "version_removed": "15"
             }
           ],
-          "opera_android": {
-            "prefix": "-webkit-",
-            "version_added": "11.5"
-          },
+          "opera_android": [
+            {
+              "version_added": "24"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "14"
+            },
+            {
+              "version_added": "12.1",
+              "version_removed": "14"
+            },
+            {
+              "prefix": "-o-",
+              "version_added": "11",
+              "version_removed": "14"
+            }
+          ],
           "safari": [
             {
               "version_added": "9"
@@ -59403,7 +59893,7 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "22"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "4"
@@ -59538,11 +60028,11 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "prefix": "-o-",
-              "version_added": "10",
+              "version_added": "12",
               "version_removed": "14"
             }
           ],
@@ -59701,11 +60191,11 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "prefix": "-o-",
-              "version_added": "10",
+              "version_added": "10.1",
               "version_removed": "14"
             }
           ],
@@ -59858,9 +60348,20 @@
               "version_removed": "15"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "12.1"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "14"
+            },
+            {
+              "prefix": "-o-",
+              "version_added": "12",
+              "version_removed": "14"
+            }
+          ],
           "safari": [
             {
               "version_added": true
@@ -60061,9 +60562,20 @@
               "version_removed": "15"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "12.1"
+            },
+            {
+              "prefix": "-webkit-",
+              "version_added": "14"
+            },
+            {
+              "prefix": "-o-",
+              "version_added": "12",
+              "version_removed": "14"
+            }
+          ],
           "safari": [
             {
               "version_added": true
@@ -60280,7 +60792,7 @@
             },
             {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             {
               "prefix": "-o-",
@@ -60477,7 +60989,7 @@
             "version_added": "9.2"
           },
           "opera_android": {
-            "version_added": "8"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.3"
@@ -61333,7 +61845,7 @@
             "version_added": "4"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -61939,7 +62451,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": [
               {
@@ -62014,7 +62526,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": [
               {
@@ -62712,9 +63224,15 @@
               "version_added": "10.5"
             }
           ],
-          "opera_android": {
-            "version_added": true
-          },
+          "opera_android": [
+            {
+              "alternative_name": "overflow-wrap",
+              "version_added": true
+            },
+            {
+              "version_added": "11"
+            }
+          ],
           "safari": [
             {
               "alternative_name": "overflow-wrap",
@@ -66196,7 +66714,7 @@
             "version_added": "5"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -66395,9 +66913,15 @@
               "version_added": "4"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "alternative_name": ":after",
+              "version_added": "10.1"
+            }
+          ],
           "safari": [
             {
               "version_added": "4"
@@ -66991,9 +67515,15 @@
               "version_added": "4"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "alternative_name": ":before",
+              "version_added": "10.1"
+            }
+          ],
           "safari": [
             {
               "version_added": "4"
@@ -67159,7 +67689,7 @@
             "version_added": "9"
           },
           "opera_android": {
-            "version_added": "9.5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -67368,7 +67898,7 @@
             "version_added": "10"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "5"
@@ -67656,7 +68186,7 @@
             "version_added": "9"
           },
           "opera_android": {
-            "version_added": "9.5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -67708,7 +68238,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -67760,7 +68290,7 @@
             "version_added": "9"
           },
           "opera_android": {
-            "version_added": "9.5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -67816,7 +68346,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "9.5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -67866,7 +68396,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -67960,9 +68490,15 @@
               "version_added": "3.5"
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "10.1"
+            },
+            {
+              "alternative_name": ":first-letter",
+              "version_added": "10.1"
+            }
+          ],
           "safari": [
             {
               "version_added": "1"
@@ -68117,9 +68653,17 @@
               "notes": "From Opera 15 to Opera 49 (exclusive), the <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work on <code>::first-line</code> or <code>:first-line</code> pseudo-elements. See <a href='https://crbug.com/129669'>Chromium bug 129669</a>."
             }
           ],
-          "opera_android": {
-            "version_added": null
-          },
+          "opera_android": [
+            {
+              "version_added": "10.1",
+              "notes": "From Opera 15 to Opera 49 (exclusive), the <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work on <code>::first-line</code> or <code>:first-line</code> pseudo-elements. See <a href='https://crbug.com/129669'>Chromium bug 129669</a>."
+            },
+            {
+              "alternative_name": ":first-line",
+              "version_added": "10.1",
+              "notes": "From Opera 15 to Opera 49 (exclusive), the <a href='https://developer.mozilla.org/docs/Web/CSS/text-transform'><code>text-transform</code></a> property does not work on <code>::first-line</code> or <code>:first-line</code> pseudo-elements. See <a href='https://crbug.com/129669'>Chromium bug 129669</a>."
+            }
+          ],
           "safari": [
             {
               "version_added": "1",
@@ -68178,7 +68722,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.2"
@@ -68350,7 +68894,7 @@
             "version_added": "47"
           },
           "opera_android": {
-            "version_added": "47"
+            "version_added": "44"
           },
           "safari": {
             "version_added": "10.1"
@@ -68402,7 +68946,7 @@
             "version_added": "7"
           },
           "opera_android": {
-            "version_added": "6"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -69508,7 +70052,7 @@
             "version_added": "10"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "5"
@@ -69670,7 +70214,7 @@
           ],
           "opera_android": [
             {
-              "version_added": "53",
+              "version_added": "47",
               "alternative_name": ":matches()",
               "flags": [
                 {
@@ -69755,7 +70299,7 @@
             "version_added": "8"
           },
           "opera_android": {
-            "version_added": "8"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -69807,7 +70351,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.2"
@@ -69857,7 +70401,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -69910,7 +70454,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.2"
@@ -70054,10 +70598,10 @@
             "version_added": false
           },
           "firefox": {
-            "version_added": false
+            "version_added": "68"
           },
           "firefox_android": {
-            "version_added": false
+            "version_added": "68"
           },
           "ie": {
             "version_added": false
@@ -70170,7 +70714,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.2"
@@ -70274,7 +70818,7 @@
             "notes": "Before Opera 15, Opera does not handle dynamically inserted elements for <code>:nth-child()</code>."
           },
           "opera_android": {
-            "version_added": "9.5",
+            "version_added": "10.1",
             "notes": "Before Opera 15, Opera does not handle dynamically inserted elements for <code>:nth-child()</code>."
           },
           "safari": {
@@ -70378,7 +70922,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -70431,7 +70975,7 @@
             "version_added": "9"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.2"
@@ -70534,7 +71078,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -70587,7 +71131,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.2"
@@ -70639,7 +71183,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "9.5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -70691,7 +71235,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -70741,7 +71285,7 @@
               "version_added": "44"
             },
             "opera_android": {
-              "version_added": "44"
+              "version_added": "43"
             },
             "safari": {
               "version_added": null
@@ -70794,7 +71338,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.2"
@@ -70846,7 +71390,7 @@
             "version_added": "10"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "5"
@@ -71113,10 +71657,15 @@
               "version_added": true
             }
           ],
-          "opera_android": {
-            "prefix": "-webkit-input-",
-            "version_added": "37"
-          },
+          "opera_android": [
+            {
+              "version_added": "43"
+            },
+            {
+              "prefix": "-webkit-input-",
+              "version_added": "37"
+            }
+          ],
           "safari": [
             {
               "version_added": "10.1"
@@ -71354,7 +71903,7 @@
             "version_added": "10"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "5"
@@ -71825,7 +72374,7 @@
             "version_added": "9.5"
           },
           "opera_android": {
-            "version_added": "9.5"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1.3"
@@ -72083,7 +72632,7 @@
             "version_added": "10"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "5"
@@ -72186,7 +72735,7 @@
             "version_added": "3.5"
           },
           "opera_android": {
-            "version_added": "37"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "1"
@@ -72866,7 +73415,7 @@
             "version_added": "9"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "10.1"
           },
           "safari": {
             "version_added": "3.1"
@@ -73971,7 +74520,7 @@
             "version_added": "15"
           },
           "opera_android": {
-            "version_added": "21"
+            "version_added": "14"
           },
           "safari": [
             {
@@ -74215,16 +74764,16 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/clamp",
         "support": {
           "chrome": {
-            "version_added": null
+            "version_added": false
           },
           "chrome_android": {
-            "version_added": null
+            "version_added": false
           },
           "edge": {
-            "version_added": null
+            "version_added": false
           },
           "edge_mobile": {
-            "version_added": null
+            "version_added": false
           },
           "firefox": {
             "version_added": false
@@ -74233,25 +74782,25 @@
             "version_added": false
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": null
+            "version_added": false
           },
           "opera_android": {
-            "version_added": null
+            "version_added": false
           },
           "safari": {
-            "version_added": null
+            "version_added": false
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": false
           },
           "samsunginternet_android": {
-            "version_added": null
+            "version_added": false
           },
           "webview_android": {
-            "version_added": null
+            "version_added": false
           }
         },
         "status": {
@@ -74394,7 +74943,7 @@
             "version_added": "28"
           },
           "opera_android": {
-            "version_added": "44"
+            "version_added": "28"
           },
           "safari": {
             "version_added": "10.1"
@@ -75053,15 +75602,13 @@
                 "version_added": "56"
               },
               "opera_android": {
-                "version_added": "56"
+                "version_added": "48"
               },
               "safari": {
-                "version_added": null,
-                "notes": "In Safari Technology Preview Release 66"
+                "version_added": "12.1"
               },
               "safari_ios": {
-                "version_added": null,
-                "notes": "In Safari Technology Preview Release 66"
+                "version_added": "12.2"
               },
               "samsunginternet_android": {
                 "version_added": false
@@ -75248,9 +75795,22 @@
                   "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
                 }
               ],
-              "opera_android": {
-                "version_added": true
-              },
+              "opera_android": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "11",
+                  "version_removed": "14",
+                  "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14",
+                  "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                }
+              ],
               "safari": [
                 {
                   "version_added": "6.1"
@@ -75366,7 +75926,7 @@
                   "version_added": "58"
                 },
                 "opera_android": {
-                  "version_added": "58"
+                  "version_added": "50"
                 },
                 "safari": {
                   "version_added": null,
@@ -75716,9 +76276,16 @@
                     "version_removed": "15"
                   }
                 ],
-                "opera_android": {
-                  "version_added": false
-                },
+                "opera_android": [
+                  {
+                    "version_added": "14"
+                  },
+                  {
+                    "prefix": "-o-",
+                    "version_added": "12",
+                    "version_removed": "14"
+                  }
+                ],
                 "safari": {
                   "version_added": false
                 },
@@ -75768,7 +76335,7 @@
                   "version_added": "58"
                 },
                 "opera_android": {
-                  "version_added": "58"
+                  "version_added": "50"
                 },
                 "safari": {
                   "version_added": null,
@@ -75939,24 +76506,31 @@
                   "version_added": "12.1"
                 },
                 {
-                  "prefix": "-o-",
-                  "version_added": "11",
-                  "version_removed": "15",
+                  "prefix": "-webkit-",
+                  "version_added": "15",
                   "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
                 },
                 {
-                  "prefix": "-webkit-",
-                  "version_added": "15",
+                  "prefix": "-o-",
+                  "version_added": "11",
+                  "version_removed": "15",
                   "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
                 }
               ],
               "opera_android": [
                 {
-                  "version_added": true
+                  "version_added": "12.1"
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "14"
+                  "version_added": "14",
+                  "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "11",
+                  "version_removed": "14",
+                  "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
                 }
               ],
               "safari": [
@@ -76075,7 +76649,7 @@
                   "version_added": "58"
                 },
                 "opera_android": {
-                  "version_added": "58"
+                  "version_added": "50"
                 },
                 "safari": {
                   "version_added": null,
@@ -76282,13 +76856,13 @@
                   "version_added": "12.1"
                 },
                 {
+                  "prefix": "-webkit-",
+                  "version_added": "15"
+                },
+                {
                   "prefix": "-o-",
                   "version_added": "12",
                   "version_removed": "15"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "15"
                 }
               ],
               "opera_android": [
@@ -76298,6 +76872,11 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "14"
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "12",
+                  "version_removed": "14"
                 }
               ],
               "safari": [
@@ -76413,9 +76992,16 @@
                     "version_removed": "15"
                   }
                 ],
-                "opera_android": {
-                  "version_added": false
-                },
+                "opera_android": [
+                  {
+                    "version_added": "14"
+                  },
+                  {
+                    "prefix": "-o-",
+                    "version_added": "12",
+                    "version_removed": "14"
+                  }
+                ],
                 "safari": {
                   "version_added": false
                 },
@@ -76465,7 +77051,7 @@
                   "version_added": "58"
                 },
                 "opera_android": {
-                  "version_added": "58"
+                  "version_added": "50"
                 },
                 "safari": {
                   "version_added": null,
@@ -76718,7 +77304,7 @@
             },
             "opera_android": {
               "prefix": "-webkit-",
-              "version_added": "15"
+              "version_added": "14"
             },
             "safari": {
               "prefix": "-webkit-",
@@ -76785,7 +77371,7 @@
             },
             "opera_android": {
               "prefix": "-webkit-",
-              "version_added": "15",
+              "version_added": "14",
               "notes": "Supports the original dual-image with percentage implementation only."
             },
             "safari": [
@@ -77272,7 +77858,7 @@
               "version_added": "50"
             },
             "opera_android": {
-              "version_added": "50"
+              "version_added": "46"
             },
             "safari": {
               "version_added": false
@@ -78202,7 +78788,7 @@
               "version_added": "50"
             },
             "opera_android": {
-              "version_added": "50"
+              "version_added": "46"
             },
             "safari": {
               "version_added": false
@@ -78747,16 +79333,16 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/max",
         "support": {
           "chrome": {
-            "version_added": null
+            "version_added": false
           },
           "chrome_android": {
-            "version_added": null
+            "version_added": false
           },
           "edge": {
-            "version_added": null
+            "version_added": false
           },
           "edge_mobile": {
-            "version_added": null
+            "version_added": false
           },
           "firefox": {
             "version_added": false
@@ -78765,25 +79351,25 @@
             "version_added": false
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": null
+            "version_added": false
           },
           "opera_android": {
-            "version_added": null
+            "version_added": false
           },
           "safari": {
-            "version_added": null
+            "version_added": "11.1"
           },
           "safari_ios": {
-            "version_added": null
+            "version_added": "11.1"
           },
           "samsunginternet_android": {
-            "version_added": null
+            "version_added": false
           },
           "webview_android": {
-            "version_added": null
+            "version_added": false
           }
         },
         "status": {
@@ -78799,16 +79385,16 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/min",
         "support": {
           "chrome": {
-            "version_added": null
+            "version_added": false
           },
           "chrome_android": {
-            "version_added": null
+            "version_added": false
           },
           "edge": {
-            "version_added": null
+            "version_added": false
           },
           "edge_mobile": {
-            "version_added": null
+            "version_added": false
           },
           "firefox": {
             "version_added": false
@@ -78817,27 +79403,25 @@
             "version_added": false
           },
           "ie": {
-            "version_added": null
+            "version_added": false
           },
           "opera": {
-            "version_added": null
+            "version_added": false
           },
           "opera_android": {
-            "version_added": null
+            "version_added": false
           },
           "safari": {
-            "version_added": null,
-            "notes": "Supported in <a href='https://developer.apple.com/safari/technology-preview/release-notes/'>Safari Technology Preview</a>"
+            "version_added": "11.1"
           },
           "safari_ios": {
-            "version_added": null,
-            "notes": "Supported in <a href='https://developer.apple.com/safari/technology-preview/release-notes/'>Safari Technology Preview</a>"
+            "version_added": "11.1"
           },
           "samsunginternet_android": {
-            "version_added": null
+            "version_added": false
           },
           "webview_android": {
-            "version_added": null
+            "version_added": false
           }
         },
         "status": {
@@ -79614,7 +80198,7 @@
             "version_added": "10.5"
           },
           "opera_android": {
-            "version_added": "10"
+            "version_added": "11"
           },
           "safari": {
             "version_added": "3.1"
@@ -79824,7 +80408,7 @@
             "version_added": "10.5"
           },
           "opera_android": {
-            "version_added": "11.5"
+            "version_added": "11"
           },
           "safari": {
             "version_added": "3.1"
@@ -79874,7 +80458,7 @@
               "version_added": "15"
             },
             "opera_android": {
-              "version_added": "22"
+              "version_added": "14"
             },
             "safari": {
               "version_added": "4"
