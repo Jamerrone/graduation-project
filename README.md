@@ -21,3 +21,17 @@ For CLI options, use the -h (or --help) argument:
 ```console
 firefly -h
 ```
+
+## Output
+```bash
+~/Projects/usability-test
+❯ firefly -w
+ FAIL  main.css
+  Properties (4)
+    ✘ [20:3] ie 11 does not support 'grid-template-columns'. Consider using Flexbox instead.
+    ✘ [21:3] ie 11 does not support 'grid-template-rows'. Consider using Flexbox instead.
+    ✘ [34:3] ie 11 does not support 'object-fit'. Try cropping the image or consider using 'background-size' instead.
+    ✘ [35:3] ie 11 does not support 'object-position'. Try cropping the image or consider using 'background-position' instead.
+
+[firefly] watching: main.css
+```
