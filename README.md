@@ -7,17 +7,17 @@
 ## Installation
 You can install Project Firefly either through cloning with git or by using npm (the recommended way):
 
-```
+```console
 npm install -g project-firefly
 ```
 
 ## Usage
-```
+```console
 firefly <options>
 ```
 
 For CLI options, use the -h (or --help) argument:
 
-```
+```console
 firefly -h
 ```
