@@ -88,8 +88,8 @@ ${chalk.cyan('[firefly] watching:')} ${filePaths
       const json = JSON.stringify(e, null, 2);
       let exportPath = args.export || 'report.json';
       if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
+      args.json ? printLn(json) : printLn(r.join('\n\n'));
       writeFile(`${exportPath}`, json);
-      printLn(json);
     } else if (args.json) {
       printLn(JSON.stringify(e, null, 2));
     } else {
