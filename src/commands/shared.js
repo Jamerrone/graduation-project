@@ -49,6 +49,12 @@ ${
         '\n[firefly] warning: "--export" is not supported in watch-mode'
     )
     : ''
+}${
+      args.json
+        ? chalk.yellow(
+            '\n[firefly] warning: "--json" is not supported in watch-mode'
+        )
+        : ''
 }
 ${chalk.cyan('[firefly] watching:')} ${filePaths
     .join(', ')
