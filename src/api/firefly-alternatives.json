@@ -1,106 +1,145 @@
 {
   "properties": {
     "flex-basis": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": [
+        "float"
+      ]
     },
     "flex-direction": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": [
+        "float"
+      ]
     },
     "flex-flow": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": [
+        "float"
+      ]
     },
     "flex-grow": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": [
+        "float"
+      ]
     },
     "flex-shrink": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": [
+        "float"
+      ]
     },
     "flex-wrap": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": [
+        "float"
+      ]
     },
     "flex": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
-    },
-    "float": {
-      "next": null,
-      "feedback": "Consider using Float instead."
+      "alternatives": [
+        "float"
+      ]
     },
     "grid-area": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-auto-columns": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-auto-flow": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-auto-rows": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-column-end": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-column-start": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-column": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-row-end": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-row-start": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-row": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-template-areas": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-template-columns": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-template-rows": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid-template": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "grid": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": [
+        "flex",
+        "float"
+      ]
     },
     "object-fit": {
-      "next": null,
-      "feedback": "Consider using 'object-fit' instead.",
-      "rawFeedback": "Try cropping the image or consider using 'background-size' instead."
+      "alternatives": [
+        [
+          "background-size",
+          "background-image"
+        ]
+      ]
     },
     "object-position": {
-      "next": null,
-      "feedback": "Consider using 'object-position' instead.",
-      "rawFeedback": "Try cropping the image or consider using 'background-position' instead."
+      "alternatives": [
+        [
+          "background-size",
+          "background-image"
+        ]
+      ]
     }
   }
 }

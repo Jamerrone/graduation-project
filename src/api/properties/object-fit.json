@@ -1,9 +1,7 @@
 {
   "properties": {
     "object-fit": {
-      "next": null,
-      "feedback": "Consider using 'object-fit' instead.",
-      "rawFeedback": "Try cropping the image or consider using 'background-size' instead."
+      "alternatives": [["background-size", "background-image"]]
     }
   }
 }

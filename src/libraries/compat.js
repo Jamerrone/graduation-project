@@ -90,25 +90,42 @@ const getPropertySupportData = (property) => {
 
 const getPropertyFeedback = (property, browserscope) => {
   try {
-    if ('rawFeedback' in API.properties[property]) {
-      return API.properties[property].rawFeedback;
+    if ('staticFeedback' in API.properties[property]) {
+      return API.properties[property].staticFeedback;
     }
 
-    const next = API.properties[property].next;
-    const supportData = getPropertySupportData(next);
-    const feedback = API.properties[next].feedback;
-
-    const isNotSupported = Object.entries(browserscope).some(
-        ([browser, version]) => {
-          const bsd = getBrowserSupportData(supportData, browser);
-          return bsd && bsd > version;
-        }
+    const alternatives = API.properties[property].alternatives.filter(
+        (alternative) =>
+        Array.isArray(alternative)
+          ? alternative.every((alternative) =>
+            validateAlternative(alternative, browserscope)
+          )
+          : validateAlternative(alternative, browserscope)
     );
 
-    return isNotSupported ? getPropertyFeedback(next, browserscope) : feedback;
+    return alternatives.length
+      ? `Consider using ${alternatives
+          .map((alternative) => {
+            return Array.isArray(alternative)
+              ? alternative
+                  .map((alternative) => `'${alternative}'`)
+                  .join(' with ')
+              : `'${alternative}'`;
+          })
+          .join(', ')
+          .replace(/, ([^,]*)$/, ' or $1')} instead.`
+      : null;
   } catch (error) {
     return null;
   }
+};
+
+const validateAlternative = (alternative, browserscope) => {
+  const supportData = getPropertySupportData(alternative);
+  return !Object.entries(browserscope).some(([browser, version]) => {
+    const bsd = getBrowserSupportData(supportData, browser);
+    return bsd && bsd > version;
+  });
 };
 
 const getBrowserSupportData = (supportData, browser) => {

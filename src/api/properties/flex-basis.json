@@ -1,8 +1,7 @@
 {
   "properties": {
     "flex-basis": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": ["float"]
     }
   }
 }

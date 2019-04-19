@@ -1,8 +1,7 @@
 {
   "properties": {
     "grid-row": {
-      "next": "flex",
-      "feedback": "Consider using Grid instead."
+      "alternatives": ["flex", "float"]
     }
   }
 }
