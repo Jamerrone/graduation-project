@@ -1,7 +1,7 @@
 {
   "properties": {
     "object-position": {
-      "alternatives": [["background-size", "background-image"]]
+      "alternatives": [["background-position", "background-image"]]
     }
   }
 }

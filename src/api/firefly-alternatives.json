@@ -136,7 +136,7 @@
     "object-position": {
       "alternatives": [
         [
-          "background-size",
+          "background-position",
           "background-image"
         ]
       ]
