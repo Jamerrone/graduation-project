@@ -1,8 +1,0 @@
-{
-  "properties": {
-    "float": {
-      "next": null,
-      "feedback": "Consider using Float instead."
-    }
-  }
-}

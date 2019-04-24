@@ -55,7 +55,7 @@ const generateTableRow = ({name, location, notSupported, feedback}) => {
     location.column
   }] ${chalk.dim(
       `${formatNotSupported(notSupported)} does not support`
-  )} '${name}'${chalk.dim(`. ${feedback}`)}`;
+  )} '${name}'${chalk.dim(`.`)}${feedback}`;
 };
 
 module.exports = {

@@ -1,8 +1,8 @@
 {
   "properties": {
     "flex-direction": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": ["float"],
+      "notes": null
     }
   }
 }

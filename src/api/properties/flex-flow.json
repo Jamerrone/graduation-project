@@ -1,8 +1,8 @@
 {
   "properties": {
     "flex-flow": {
-      "next": "float",
-      "feedback": "Consider using Flexbox instead."
+      "alternatives": ["float"],
+      "notes": null
     }
   }
 }

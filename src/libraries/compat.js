@@ -1,3 +1,5 @@
+const chalk = require('chalk');
+
 const {
   'at-rules': AT_RULES,
   properties: PROPERTIES,
@@ -89,26 +91,54 @@ const getPropertySupportData = (property) => {
 };
 
 const getPropertyFeedback = (property, browserscope) => {
+  let alternatives = null;
+  let feedbackMsg = '';
+  let notes = null;
+
   try {
-    if ('rawFeedback' in API.properties[property]) {
-      return API.properties[property].rawFeedback;
-    }
-
-    const next = API.properties[property].next;
-    const supportData = getPropertySupportData(next);
-    const feedback = API.properties[next].feedback;
-
-    const isNotSupported = Object.entries(browserscope).some(
-        ([browser, version]) => {
-          const bsd = getBrowserSupportData(supportData, browser);
-          return bsd && bsd > version;
-        }
+    alternatives = API.properties[property].alternatives.filter((alternative) =>
+      Array.isArray(alternative)
+        ? alternative.every((alternative) =>
+          validateAlternative(alternative, browserscope)
+        )
+        : validateAlternative(alternative, browserscope)
     );
-
-    return isNotSupported ? getPropertyFeedback(next, browserscope) : feedback;
-  } catch (error) {
-    return null;
+  } catch (e) {
+    void e;
   }
+
+  try {
+    notes = API.properties[property].notes;
+  } catch (e) {
+    void e;
+  }
+
+  if (alternatives && alternatives.length) {
+    const part1 = ' Consider using ';
+    const part2 = alternatives
+        .map((alternative) => {
+          return Array.isArray(alternative)
+          ? alternative
+              .map((alternative) => `'${alternative}'`)
+              .join(chalk.dim(' with '))
+          : `'${alternative}'`;
+        })
+        .join(chalk.dim(', '))
+        .replace(/, ([^,]*)$/, ' or $1');
+    const part3 = ' instead.';
+    feedbackMsg += chalk.dim(part1) + part2 + chalk.dim(part3);
+  }
+
+  if (notes) feedbackMsg += ` ${chalk.cyan('[Notes]: ')}${notes}`;
+  return feedbackMsg;
+};
+
+const validateAlternative = (alternative, browserscope) => {
+  const supportData = getPropertySupportData(alternative);
+  return !Object.entries(browserscope).some(([browser, version]) => {
+    const bsd = getBrowserSupportData(supportData, browser);
+    return bsd && bsd > version;
+  });
 };
 
 const getBrowserSupportData = (supportData, browser) => {

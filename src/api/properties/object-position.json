@@ -1,9 +1,8 @@
 {
   "properties": {
     "object-position": {
-      "next": null,
-      "feedback": "Consider using 'object-position' instead.",
-      "rawFeedback": "Try cropping the image or consider using 'background-position' instead."
+      "alternatives": [["background-position", "background-image"]],
+      "notes": "You could also try cropping the image."
     }
   }
 }

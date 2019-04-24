@@ -5,9 +5,12 @@ const getCSSStatements = (cssNode) => {
   csstree.walk(cssNode, {
     enter(node) {
       if (node.type === 'Atrule') {
-        node.name === 'supports'
-          ? node.block.children.each((node, item, list) => list.remove(item))
-          : statements.atrules.push(node);
+        if (node.name === 'supports') {
+          node.prelude.children.each((node, item, list) => list.remove(item));
+          node.block.children.each((node, item, list) => list.remove(item));
+        } else {
+          statements.atrules.push(node);
+        }
       }
       if (node.type === 'Declaration') statements.declarations.push(node);
       if (node.type === 'MediaFeature') statements.mediaFeatures.push(node);
