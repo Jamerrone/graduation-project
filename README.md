@@ -21,17 +21,30 @@ For CLI options, use the -h (or --help) argument:
 ```console
 firefly -h
 ```
+```text
+Usage: firefly or
+       firefly [-i | --input <path>] [-e | --export <path>] [-w | --watch]
+       [-j | --json] [-h | --help] [-v | --version]
+
+Options:
+   -i, --input <path>    Specify the input file path.
+   -e, --export <path>   Export the generated report in JSON format.
+
+Flags:
+   -w, --watch           Rerun firefly on file change.
+   -j, --json            Output firefly's report in JSON format.
+   -h, --help            Output usage information.
+   -v, --version         Output the version number.
+```
 
 ## Output
 ```bash
 ~/Projects/usability-test
-❯ firefly -w
+❯ firefly
  FAIL  main.css
-  Properties (4)
-    ✘ [20:3] ie 11 does not support 'grid-template-columns'. Consider using Flexbox instead.
-    ✘ [21:3] ie 11 does not support 'grid-template-rows'. Consider using Flexbox instead.
-    ✘ [34:3] ie 11 does not support 'object-fit'. Try cropping the image or consider using 'background-size' instead.
-    ✘ [35:3] ie 11 does not support 'object-position'. Try cropping the image or consider using 'background-position' instead.
-
-[firefly] watching: main.css
+  Properties (3)
+    ✘ [20:3] ie 11 does not support 'grid-template-columns'. Consider using 'flex' or 'float' instead.
+    ✘ [21:3] ie 11 does not support 'grid-template-rows'. Consider using 'flex' or 'float' instead.
+    ✘ [34:3] ie 11 does not support 'object-fit'. Consider using 'background-size' with 'background-image' instead. [Note]: You could also try cropping the image.
+    ✘ [35:3] ie 11 does not support 'object-position'. Consider using 'background-position' with 'background-image' instead. [Note]: You could also try cropping the image.
 ```
