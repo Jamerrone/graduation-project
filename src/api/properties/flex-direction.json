@@ -1,7 +1,8 @@
 {
   "properties": {
     "flex-direction": {
-      "alternatives": ["float"]
+      "alternatives": ["float"],
+      "notes": null
     }
   }
 }

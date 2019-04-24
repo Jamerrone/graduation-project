@@ -1,7 +1,8 @@
 {
   "properties": {
     "object-position": {
-      "alternatives": [["background-position", "background-image"]]
+      "alternatives": [["background-position", "background-image"]],
+      "notes": "You could also try cropping the image."
     }
   }
 }

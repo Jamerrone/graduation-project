@@ -1,7 +1,8 @@
 {
   "properties": {
     "flex-shrink": {
-      "alternatives": ["float"]
+      "alternatives": ["float"],
+      "notes": null
     }
   }
 }

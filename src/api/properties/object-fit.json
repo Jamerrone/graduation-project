@@ -1,7 +1,8 @@
 {
   "properties": {
     "object-fit": {
-      "alternatives": [["background-size", "background-image"]]
+      "alternatives": [["background-size", "background-image"]],
+      "notes": "You could also try cropping the image."
     }
   }
 }
