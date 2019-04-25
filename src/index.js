@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-const cosmiconfig = require('cosmiconfig');
 const minimist = require('minimist');
 const stringSimilarity = require('string-similarity');
 
+const appConfig = require('./libraries/config');
 const {printEr} = require('./libraries/utils');
 
-const explorer = cosmiconfig('firefly');
-const {config: appConfig = {}} = explorer.searchSync() || {};
 const args = minimist(process.argv.slice(2), {
   alias: {
     e: 'export',

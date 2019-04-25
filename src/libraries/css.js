@@ -1,18 +1,24 @@
 const csstree = require('css-tree');
 
+const appConfig = require('./config');
+
 const getCSSStatements = (cssNode) => {
   const statements = {atrules: [], declarations: [], mediaFeatures: []};
   csstree.walk(cssNode, {
     enter(node) {
       if (node.type === 'Atrule') {
-        if (node.name === 'supports') {
+        if (appConfig.ignoreAtSupports && node.name === 'supports') {
           node.prelude.children.each((node, item, list) => list.remove(item));
           node.block.children.each((node, item, list) => list.remove(item));
         } else {
           statements.atrules.push(node);
         }
       }
-      if (node.type === 'Declaration') statements.declarations.push(node);
+      if (node.type === 'Declaration') {
+        const r = /\-(moz|o|webkit|ms|khtml)\-.+/;
+        if (appConfig.ignoreVendorPrefixes && node.property.match(r)) return;
+        statements.declarations.push(node);
+      }
       if (node.type === 'MediaFeature') statements.mediaFeatures.push(node);
     },
   });
