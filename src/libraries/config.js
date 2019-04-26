@@ -2,14 +2,15 @@ const cosmiconfig = require('cosmiconfig');
 
 const defaultConfig = {
   root: process.cwd(),
+  mode: 'default', // 'default' | 'export' | 'json' | 'watch'
   entry: null,
   export: {
     feedback: true,
     filename: 'report.json',
-    path: this.root,
+    path: process.cwd(),
   },
 
-  browserslist: [], // Working
+  browserslist: ['defaults'], // Working
   disableFeedbackSystem: false,
   exclude: [], // Working
   ignoreAtSupports: false, // Working
