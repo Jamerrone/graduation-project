@@ -5,9 +5,9 @@ const getDirName = require('path').dirname;
 
 const {printEr, printLn} = require('./utils');
 
-const findFiles = async (fileType, ignore = []) => {
+const findFiles = async (fileType, exclude = []) => {
   const files = await fg([`**/*.${fileType}`], {
-    ignore: [...ignore, '**/node_modules'],
+    ignore: [...exclude, '**/node_modules'],
   });
   return files;
 };

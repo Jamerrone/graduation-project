@@ -1,6 +1,20 @@
 const cosmiconfig = require('cosmiconfig');
 
-const defaultConfig = require('../.fireflyrc.json');
+const defaultConfig = {
+  root: process.cwd(),
+  entry: null,
+  export: {
+    feedback: true,
+    filename: 'report.json',
+    path: this.root,
+  },
+
+  browserslist: [], // Working
+  disableFeedbackSystem: false,
+  exclude: [], // Working
+  ignoreAtSupports: false, // Working
+  ignoreVendorPrefixes: false, // Working
+};
 
 const getConfig = () => {
   let config = {};

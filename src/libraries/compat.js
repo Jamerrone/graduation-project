@@ -129,7 +129,7 @@ const getPropertyFeedback = (property, browserscope) => {
     feedbackMsg += chalk.dim(part1) + part2 + chalk.dim(part3);
   }
 
-  if (notes) feedbackMsg += ` ${chalk.cyan('[Notes]: ')}${notes}`;
+  if (notes) feedbackMsg += ` ${chalk.cyan('[Note]: ')}${notes}`;
   return feedbackMsg;
 };
 

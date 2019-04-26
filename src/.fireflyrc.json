@@ -1,6 +1,0 @@
-{
-  "browserslist": ["last 2 version", "not dead and > .5%"],
-  "ignoreAtSupports": false,
-  "ignoreVendorPrefixes": false,
-  "ignore": []
-}
