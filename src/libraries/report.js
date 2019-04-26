@@ -41,7 +41,7 @@ const generateTables = (filePath, supportData) => {
   );
 };
 
-const generateTableRow = ({name, location, notSupported, feedback}) => {
+const generateTableRow = ({name, location, notSupported, feedback = ''}) => {
   const formatNotSupported = (notSupported) => {
     return notSupported.length <= 3
       ? notSupported.join(', ').replace(/, ([^,]*)$/, ' & $1')

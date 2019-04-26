@@ -5,13 +5,12 @@ const defaultConfig = {
   mode: 'default', // 'default' | 'export' | 'json' | 'watch'
   entry: null,
   export: {
-    feedback: true,
     filename: 'report.json',
     path: process.cwd(),
   },
 
   browserslist: ['defaults'], // Working
-  disableFeedbackSystem: false,
+  disableFeedbackSystem: false, // Working
   exclude: [], // Working
   ignoreAtSupports: false, // Working
   ignoreVendorPrefixes: false, // Working

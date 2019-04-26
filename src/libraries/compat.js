@@ -1,5 +1,7 @@
 const chalk = require('chalk');
 
+const {disableFeedbackSystem} = require('./config');
+
 const {
   'at-rules': AT_RULES,
   properties: PROPERTIES,
@@ -24,7 +26,9 @@ const checkBrowserSupport = (
     properties: declarations
         .reduce((acc, {property, loc}) => {
           const supportData = getPropertySupportData(property);
-          const feedback = getPropertyFeedback(property, browserscope);
+          const feedback = disableFeedbackSystem
+          ? null
+          : getPropertyFeedback(property, browserscope);
 
           supportData &&
           acc.push(
@@ -49,13 +53,13 @@ const checkBrowserSupport = (
   };
 };
 
-const formatData = (browserscope, name, loc, supportData, feedback = null) => {
+const formatData = (browserscope, name, loc, supportData, feedback = '') => {
   const {line, column} = loc.start;
 
   return Object.entries(browserscope).reduce((acc, [browser, version]) => {
     acc.name = name;
     acc.location = {line, column};
-    acc.feedback = feedback || '';
+    if (!disableFeedbackSystem) acc.feedback = feedback;
     acc.supported = acc.supported || [];
     acc.notSupported = acc.notSupported || [];
     acc.unknown = acc.unknown || [];
