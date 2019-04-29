@@ -1,9 +1,8 @@
 const cosmiconfig = require('cosmiconfig');
 
 const defaultConfig = {
-  root: process.cwd(),
   mode: 'default', // 'default' | 'export' | 'json' | 'watch'
-  entry: null,
+  entry: null, // Working
   export: {
     filename: 'report.json',
     path: process.cwd(),

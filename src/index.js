@@ -35,8 +35,9 @@ const args = minimist(process.argv.slice(2), {
   },
 });
 
-if (args.input || args._[0]) {
-  require('./commands/input')(appConfig, args);
+if (args.input || args._[0] || appConfig.entry) {
+  const filePath = args.input || args._[0] || appConfig.entry;
+  require('./commands/input')(appConfig, filePath, args);
 } else if (args.version) {
   require('./commands/version')();
 } else if (args.help) {
