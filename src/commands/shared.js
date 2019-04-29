@@ -4,7 +4,11 @@ const path = require('path');
 
 const {getBrowserslist} = require('../libraries/browserslist');
 const {checkBrowserSupport} = require('../libraries/compat');
-const {browserslist, export: exportConfig} = require('../libraries/config');
+const {
+  mode,
+  browserslist,
+  export: exportConfig,
+} = require('../libraries/config');
 const {getCSSStatements, parseCSS} = require('../libraries/css');
 const {readFile, writeFile} = require('../libraries/files');
 const {generateReport} = require('../libraries/report');
@@ -41,17 +45,17 @@ const getExportAndReport = (filePaths) => {
 
 module.exports = (filePaths, args) => {
   if (typeof filePaths === 'string') filePaths = [filePaths];
-  if (args.watch) {
+  if (args.watch || mode === 'watch') {
     let reportLineCount = 0;
     const watchingNotification = `
 ${
-  'export' in args
+  'export' in args || mode === 'export'
     ? chalk.yellow(
         '\n[firefly] warning: "--export" is not supported in watch-mode'
     )
     : ''
 }${
-      args.json
+      args.json || mode === 'json'
         ? chalk.yellow(
             '\n[firefly] warning: "--json" is not supported in watch-mode'
         )
@@ -85,7 +89,7 @@ ${chalk.cyan('[firefly] watching:')} ${filePaths
   } else {
     const {e, r} = getExportAndReport(filePaths);
 
-    if ('export' in args) {
+    if ('export' in args || mode === 'export') {
       const json = JSON.stringify(e, null, 2);
       let exportPath =
         args.export ||
@@ -93,9 +97,9 @@ ${chalk.cyan('[firefly] watching:')} ${filePaths
       if (exportPath.endsWith('/')) exportPath += 'report.json';
       if (exportPath.startsWith('/')) exportPath = exportPath.substr(1);
       if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
-      args.json ? printLn(json) : printLn(r.join('\n\n'));
+      args.json || mode === 'json' ? printLn(json) : printLn(r.join('\n\n'));
       writeFile(`${path.normalize(exportPath)}`, json);
-    } else if (args.json) {
+    } else if (args.json || mode === 'json') {
       printLn(JSON.stringify(e, null, 2));
     } else {
       printLn(r.join('\n\n'));

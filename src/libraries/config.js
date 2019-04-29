@@ -1,18 +1,18 @@
 const cosmiconfig = require('cosmiconfig');
 
 const defaultConfig = {
-  mode: 'default', // 'default' | 'export' | 'json' | 'watch'
-  entry: null, // Working
+  mode: 'default',
+  entry: null,
   export: {
-    filename: 'report.json', // Working
-    path: process.cwd(), // Working
+    filename: 'report.json',
+    path: process.cwd(),
   },
 
-  browserslist: ['defaults'], // Working
-  disableFeedbackSystem: false, // Working
-  exclude: [], // Working
-  ignoreAtSupports: false, // Working
-  ignoreVendorPrefixes: false, // Working
+  browserslist: ['defaults'],
+  disableFeedbackSystem: false,
+  exclude: [],
+  ignoreAtSupports: false,
+  ignoreVendorPrefixes: false,
 };
 
 const getConfig = () => {
