@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 const fg = require('fast-glob');
 const fs = require('fs');
-const getDirName = require('path').dirname;
+const path = require('path');
 
 const {exclude} = require('./config');
 const {printEr, printLn} = require('./utils');
@@ -20,12 +20,16 @@ const readFile = (filePath) => {
 };
 
 const writeFile = (filePath, data) => {
-  fs.mkdir(getDirName(filePath), {recursive: true}, (err) => {
+  fs.mkdir(path.dirname(filePath), {recursive: true}, (err) => {
     if (err) throw err;
     fs.writeFile(filePath, data, (err) => {
       if (err) throw err;
       printLn(
-          chalk.green(`\n✔ The report was successfully exported: ${filePath}.`)
+          chalk.green(
+              `\n✔ The report was successfully exported: ${path.resolve(
+                  filePath
+              )}.`
+          )
       );
     });
   });

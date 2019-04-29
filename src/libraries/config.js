@@ -5,7 +5,7 @@ const defaultConfig = {
   entry: null,
   export: {
     filename: 'report.json',
-    path: process.cwd(),
+    path: './',
   },
 
   browserslist: ['defaults'],
