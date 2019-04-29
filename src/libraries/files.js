@@ -3,9 +3,10 @@ const fg = require('fast-glob');
 const fs = require('fs');
 const getDirName = require('path').dirname;
 
+const {exclude} = require('./config');
 const {printEr, printLn} = require('./utils');
 
-const findFiles = async (fileType, exclude = []) => {
+const findFiles = async (fileType) => {
   const files = await fg([`**/*.${fileType}`], {
     ignore: [...exclude, '**/node_modules'],
   });

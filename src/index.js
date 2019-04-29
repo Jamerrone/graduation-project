@@ -2,7 +2,7 @@
 const minimist = require('minimist');
 const stringSimilarity = require('string-similarity');
 
-const appConfig = require('./libraries/config');
+const {entry} = require('./libraries/config');
 const {printEr} = require('./libraries/utils');
 
 const args = minimist(process.argv.slice(2), {
@@ -35,13 +35,13 @@ const args = minimist(process.argv.slice(2), {
   },
 });
 
-if (args.input || args._[0] || appConfig.entry) {
-  const filePath = args.input || args._[0] || appConfig.entry;
-  require('./commands/input')(appConfig, filePath, args);
+if (args.input || args._[0] || entry) {
+  const filePath = args.input || args._[0] || entry;
+  require('./commands/input')(filePath, args);
 } else if (args.version) {
   require('./commands/version')();
 } else if (args.help) {
   require('./commands/help')();
 } else {
-  require('./commands')(appConfig, args);
+  require('./commands')(args);
 }

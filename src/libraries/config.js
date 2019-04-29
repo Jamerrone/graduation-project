@@ -4,8 +4,8 @@ const defaultConfig = {
   mode: 'default', // 'default' | 'export' | 'json' | 'watch'
   entry: null, // Working
   export: {
-    filename: 'report.json',
-    path: process.cwd(),
+    filename: 'report.json', // Working
+    path: process.cwd(), // Working
   },
 
   browserslist: ['defaults'], // Working
@@ -19,7 +19,9 @@ const getConfig = () => {
   let config = {};
   try {
     const explorer = cosmiconfig('firefly');
-    config = {...defaultConfig, ...explorer.searchSync().config};
+    const userConfig = explorer.searchSync().config;
+    config = {...defaultConfig, ...userConfig};
+    config.export = {...defaultConfig.export, ...userConfig.export};
   } catch (error) {
     config = defaultConfig;
   }
