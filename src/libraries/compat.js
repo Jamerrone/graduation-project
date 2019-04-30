@@ -139,9 +139,10 @@ const getPropertyFeedback = (property, browserscope) => {
 
 const validateAlternative = (alternative, browserscope) => {
   const supportData = getPropertySupportData(alternative);
-  return !Object.entries(browserscope).some(([browser, version]) => {
+  return Object.entries(browserscope).every(([browser, version]) => {
     const bsd = getBrowserSupportData(supportData, browser);
-    return bsd && bsd > version;
+    if (bsd === null) return true;
+    return bsd && bsd <= version;
   });
 };
 
