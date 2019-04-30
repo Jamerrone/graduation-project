@@ -40,21 +40,21 @@ Flags:
 ## Configuration File
 Use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. Firefly supports the following formats:
 
-- a `firefly` property in `package.json`
-- a `.fireflyrc` file in JSON or YAML format
-- a `.fireflyrc.json` file
-- a `.fireflyrc.yaml`, `.fireflyrc.yml`, or `.fireflyrc.js` file
-- a `fireflyrc.config.js` file exporting a JS object
+  - a `firefly` property in `package.json`
+  - a `.fireflyrc` file in JSON or YAML format
+  - a `.fireflyrc.json` file
+  - a `.fireflyrc.yaml`, `.fireflyrc.yml`, or `.fireflyrc.js` file
+  - a `fireflyrc.config.js` file exporting a JS object
 
 ### Options
 **mode**<br>
 Type: `string`<br>
 Default: `'default'`<br>
 Modes:
-- `default` - Validate the project and output its report.
-- `export` - Export the generated report in JSON format.
-- `json` - Output Firefly's report in JSON format.
-- `watch` - Rerun Firefly on file change.
+  - `default` - Validate the project and output its report.
+  - `export` - Export the generated report in JSON format.
+  - `json` - Output Firefly's report in JSON format.
+  - `watch` - Rerun Firefly on file change.
 
 **entry**<br>
 Type: `string` or `null`<br>
