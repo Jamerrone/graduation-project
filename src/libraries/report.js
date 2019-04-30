@@ -41,7 +41,8 @@ const generateTables = (filePath, supportData) => {
   );
 };
 
-const generateTableRow = ({name, location, notSupported, feedback = ''}) => {
+const generateTableRow = ({name, location, notSupported, feedback}) => {
+  const feedbackMsg = generateFeedbackMsg(feedback);
   const formatNotSupported = (notSupported) => {
     return notSupported.length <= 3
       ? notSupported.join(', ').replace(/, ([^,]*)$/, ' & $1')
@@ -55,7 +56,36 @@ const generateTableRow = ({name, location, notSupported, feedback = ''}) => {
     location.column
   }] ${chalk.dim(
       `${formatNotSupported(notSupported)} does not support`
-  )} '${name}'${chalk.dim(`.`)}${feedback}`;
+  )} '${name}'${chalk.dim(`.`)}${feedbackMsg}`;
+};
+
+const generateFeedbackMsg = (feedback) => {
+  if (!feedback) return '';
+  const alternatives = feedback.alternatives;
+  const notes = feedback.notes;
+  let feedbackMsg = '';
+
+  if (alternatives && alternatives.length) {
+    const part1 = ' Consider using ';
+    const part2 = alternatives
+        .map((alternative) => {
+          return Array.isArray(alternative)
+          ? alternative
+              .map((alternative) => `'${alternative}'`)
+              .join(chalk.dim(' with '))
+          : `'${alternative}'`;
+        })
+        .join(chalk.dim(', '))
+        .replace(/, ([^,]*)$/, ' or $1');
+    const part3 = ' instead.';
+    feedbackMsg += chalk.dim(part1) + part2 + chalk.dim(part3);
+  }
+
+  if (notes && notes.length) {
+    feedbackMsg += ` ${chalk.cyan('[Note]: ')}${notes}`;
+  }
+
+  return feedbackMsg;
 };
 
 module.exports = {

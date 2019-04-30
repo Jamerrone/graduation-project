@@ -1,5 +1,3 @@
-const chalk = require('chalk');
-
 const {disableFeedbackSystem} = require('./config');
 
 const {
@@ -53,7 +51,7 @@ const checkBrowserSupport = (
   };
 };
 
-const formatData = (browserscope, name, loc, supportData, feedback = '') => {
+const formatData = (browserscope, name, loc, supportData, feedback = null) => {
   const {line, column} = loc.start;
 
   return Object.entries(browserscope).reduce((acc, [browser, version]) => {
@@ -95,46 +93,17 @@ const getPropertySupportData = (property) => {
 };
 
 const getPropertyFeedback = (property, browserscope) => {
-  let alternatives = null;
-  let feedbackMsg = '';
-  let notes = null;
-
-  try {
-    alternatives = API.properties[property].alternatives.filter((alternative) =>
+  const feedback = API.properties[property];
+  if (feedback && 'alternatives' in feedback) {
+    feedback.alternatives = feedback.alternatives.filter((alternative) =>
       Array.isArray(alternative)
         ? alternative.every((alternative) =>
           validateAlternative(alternative, browserscope)
         )
         : validateAlternative(alternative, browserscope)
     );
-  } catch (e) {
-    void e;
   }
-
-  try {
-    notes = API.properties[property].notes;
-  } catch (e) {
-    void e;
-  }
-
-  if (alternatives && alternatives.length) {
-    const part1 = ' Consider using ';
-    const part2 = alternatives
-        .map((alternative) => {
-          return Array.isArray(alternative)
-          ? alternative
-              .map((alternative) => `'${alternative}'`)
-              .join(chalk.dim(' with '))
-          : `'${alternative}'`;
-        })
-        .join(chalk.dim(', '))
-        .replace(/, ([^,]*)$/, ' or $1');
-    const part3 = ' instead.';
-    feedbackMsg += chalk.dim(part1) + part2 + chalk.dim(part3);
-  }
-
-  if (notes) feedbackMsg += ` ${chalk.cyan('[Note]: ')}${notes}`;
-  return feedbackMsg;
+  return feedback;
 };
 
 const validateAlternative = (alternative, browserscope) => {
