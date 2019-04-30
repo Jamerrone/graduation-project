@@ -49,7 +49,7 @@ Use a JavaScript, JSON or YAML file to specify configuration information for an 
 -   a   `.fireflyrc` file in JSON or YAML format
 -   a   `.fireflyrc.json` file
 -   a   `.fireflyrc.yaml`, `.fireflyrc.yml`, or `.fireflyrc.js` file
--   a   `fireflyrc.config.js` file exporting a JS object
+-   a   `firefly.config.js` file exporting a JS object
 
 ### Options
 
