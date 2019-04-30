@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-const cosmiconfig = require('cosmiconfig');
 const minimist = require('minimist');
 const stringSimilarity = require('string-similarity');
 
+const {entry} = require('./libraries/config');
 const {printEr} = require('./libraries/utils');
 
-const explorer = cosmiconfig('firefly');
-const {config: appConfig = {}} = explorer.searchSync() || {};
 const args = minimist(process.argv.slice(2), {
   alias: {
     e: 'export',
@@ -37,12 +35,13 @@ const args = minimist(process.argv.slice(2), {
   },
 });
 
-if (args.input || args._[0]) {
-  require('./commands/input')(appConfig, args);
+if (args.input || args._[0] || entry) {
+  const filePath = args.input || args._[0] || entry;
+  require('./commands/input')(filePath, args);
 } else if (args.version) {
   require('./commands/version')();
 } else if (args.help) {
   require('./commands/help')();
 } else {
-  require('./commands')(appConfig, args);
+  require('./commands')(args);
 }

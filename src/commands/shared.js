@@ -1,14 +1,20 @@
 const chalk = require('chalk');
 const chokidar = require('chokidar');
+const path = require('path');
 
 const {getBrowserslist} = require('../libraries/browserslist');
 const {checkBrowserSupport} = require('../libraries/compat');
+const {
+  mode,
+  browserslist,
+  export: exportConfig,
+} = require('../libraries/config');
 const {getCSSStatements, parseCSS} = require('../libraries/css');
 const {readFile, writeFile} = require('../libraries/files');
 const {generateReport} = require('../libraries/report');
 const {printLn} = require('../libraries/utils');
 
-const firefly = (filePath, browserslist) => {
+const firefly = (filePath) => {
   const fileString = readFile(filePath);
   const parsedCSS = parseCSS(fileString);
   const cssStatements = getCSSStatements(parsedCSS);
@@ -18,12 +24,11 @@ const firefly = (filePath, browserslist) => {
   return {browserscope, browserSupport, generatedReport};
 };
 
-const getExportAndReport = (filePaths, browserslist) => {
+const getExportAndReport = (filePaths) => {
   return filePaths.reduce(
       (acc, filePath) => {
         const {browserscope, browserSupport, generatedReport} = firefly(
-            filePath,
-            browserslist
+            filePath
         );
 
         acc.e.push({
@@ -38,19 +43,19 @@ const getExportAndReport = (filePaths, browserslist) => {
   );
 };
 
-module.exports = (filePaths, browserslist, args) => {
+module.exports = (filePaths, args) => {
   if (typeof filePaths === 'string') filePaths = [filePaths];
-  if (args.watch) {
+  if (args.watch || mode === 'watch') {
     let reportLineCount = 0;
     const watchingNotification = `
 ${
-  'export' in args
+  'export' in args || mode === 'export'
     ? chalk.yellow(
         '\n[firefly] warning: "--export" is not supported in watch-mode'
     )
     : ''
 }${
-      args.json
+      args.json || mode === 'json'
         ? chalk.yellow(
             '\n[firefly] warning: "--json" is not supported in watch-mode'
         )
@@ -68,7 +73,7 @@ ${chalk.cyan('[firefly] watching:')} ${filePaths
     };
 
     const printReport = () => {
-      const {r} = getExportAndReport(filePaths, browserslist);
+      const {r} = getExportAndReport(filePaths);
       const message = r.join('\n\n') + watchingNotification;
       reportLineCount = message.split('\n').length;
       process.stdout.write(message);
@@ -82,15 +87,19 @@ ${chalk.cyan('[firefly] watching:')} ${filePaths
           printReport();
         });
   } else {
-    const {e, r} = getExportAndReport(filePaths, browserslist);
+    const {e, r} = getExportAndReport(filePaths);
 
-    if ('export' in args) {
+    if ('export' in args || mode === 'export') {
       const json = JSON.stringify(e, null, 2);
-      let exportPath = args.export || 'report.json';
+      let exportPath =
+        args.export ||
+        path.join(exportConfig.path, exportConfig.filename || 'report.json');
+      if (exportPath.endsWith('/')) exportPath += 'report.json';
+      if (exportPath.startsWith('/')) exportPath = exportPath.substr(1);
       if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
-      args.json ? printLn(json) : printLn(r.join('\n\n'));
-      writeFile(`${exportPath}`, json);
-    } else if (args.json) {
+      args.json || mode === 'json' ? printLn(json) : printLn(r.join('\n\n'));
+      writeFile(`${path.normalize(exportPath)}`, json);
+    } else if (args.json || mode === 'json') {
       printLn(JSON.stringify(e, null, 2));
     } else {
       printLn(r.join('\n\n'));
