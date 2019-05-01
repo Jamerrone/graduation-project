@@ -6,6 +6,30 @@ const {
 } = require('../api/mdn-bcd');
 const API = require('../api/firefly-alternatives');
 
+const getAtruleSupportData = atrule => {
+  try {
+    return AT_RULES[atrule].__compat.support;
+  } catch (error) {
+    return false;
+  }
+};
+
+const getPropertySupportData = property => {
+  try {
+    return PROPERTIES[property].__compat.support;
+  } catch (error) {
+    return false;
+  }
+};
+
+const getMediaFeatureSupportData = mediaFeature => {
+  try {
+    return AT_RULES.media[mediaFeature].__compat.support;
+  } catch (error) {
+    return false;
+  }
+};
+
 const getBrowserSupportData = (supportData, browser) => {
   let browserSupportData = Array.isArray(supportData[browser]) ?
     supportData[browser][0] :
@@ -32,22 +56,6 @@ const validateAlternative = (alternative, browserscope) => {
   });
 };
 
-const getAtruleSupportData = atrule => {
-  try {
-    return AT_RULES[atrule].__compat.support;
-  } catch (error) {
-    return false;
-  }
-};
-
-const getPropertySupportData = property => {
-  try {
-    return PROPERTIES[property].__compat.support;
-  } catch (error) {
-    return false;
-  }
-};
-
 const getPropertyFeedback = (property, browserscope) => {
   const feedback = API.properties[property];
   if (feedback && 'alternatives' in feedback) {
@@ -63,22 +71,14 @@ const getPropertyFeedback = (property, browserscope) => {
   return feedback;
 };
 
-const getMediaFeatureSupportData = mediaFeature => {
-  try {
-    return AT_RULES.media[mediaFeature].__compat.support;
-  } catch (error) {
-    return false;
-  }
-};
-
-const formatData = (browserscope, name, loc, supportData, feedback = null) => {
+const formatData = ({browserscope, name, loc, supportData, feedback}) => {
   const {line, column} = loc.start;
 
   return Object.entries(browserscope).reduce((acc, [browser, version]) => {
     acc.name = name;
     acc.location = {line, column};
     if (!disableFeedbackSystem) {
-      acc.feedback = feedback;
+      acc.feedback = feedback || null;
     }
 
     acc.supported = acc.supported || [];
@@ -109,7 +109,7 @@ const checkBrowserSupport = (
         const supportData = getAtruleSupportData(name);
 
         if (supportData) {
-          acc.push(formatData(browserscope, name, loc, supportData));
+          acc.push(formatData({browserscope, name, loc, supportData}));
         }
 
         return acc;
@@ -124,7 +124,13 @@ const checkBrowserSupport = (
 
         if (supportData) {
           acc.push(
-            formatData(browserscope, property, loc, supportData, feedback)
+            formatData({
+              browserscope,
+              name: property,
+              loc,
+              supportData,
+              feedback
+            })
           );
         }
 
@@ -138,7 +144,7 @@ const checkBrowserSupport = (
         );
 
         if (supportData) {
-          acc.push(formatData(browserscope, name, loc, supportData));
+          acc.push(formatData({browserscope, name, loc, supportData}));
         }
 
         return acc;
