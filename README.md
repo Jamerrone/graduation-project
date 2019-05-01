@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/project-firefly.svg)](https://badge.fury.io/js/project-firefly)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3530b42dade4a84830aafae6b910b57)](https://app.codacy.com/app/Jamerrone/graduation-project?utm_source=github.com&utm_medium=referral&utm_content=Jamerrone/graduation-project&utm_campaign=Badge_Grade_Dashboard)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
 > A CSS Support Validator.
 
@@ -45,11 +46,11 @@ Flags:
 
 Use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. Firefly supports the following formats:
 
--   a   `firefly` property in `package.json`
--   a   `.fireflyrc` file in JSON or YAML format
--   a   `.fireflyrc.json` file
--   a   `.fireflyrc.yaml`, `.fireflyrc.yml`, or `.fireflyrc.js` file
--   a   `firefly.config.js` file exporting a JS object
+-   a `firefly` property in `package.json`
+-   a `.fireflyrc` file in JSON or YAML format
+-   a `.fireflyrc.json` file
+-   a `.fireflyrc.yaml`, `.fireflyrc.yml`, or `.fireflyrc.js` file
+-   a `firefly.config.js` file exporting a JS object
 
 ### Options
 

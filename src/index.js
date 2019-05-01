@@ -12,13 +12,13 @@ const args = minimist(process.argv.slice(2), {
     i: 'input',
     j: 'json',
     v: 'version',
-    w: 'watch',
+    w: 'watch'
   },
   boolean: ['help', 'json', 'version', 'watch'],
   string: ['export', 'input'],
   unknown(arg) {
-    return arg.startsWith('-')
-      ? printEr([
+    return arg.startsWith('-') ?
+      printEr([
         `"${arg}" is not a valid option/command. See "firefly --help".`,
         `Did you mean: ${
           stringSimilarity.findBestMatch(arg, [
@@ -27,12 +27,12 @@ const args = minimist(process.argv.slice(2), {
             '--input',
             '--json',
             '--version',
-            '--watch',
+            '--watch'
           ]).bestMatch.target
-        }?`,
-      ])
-      : true;
-  },
+        }?`
+      ]) :
+      true;
+  }
 });
 
 if (args.input || args._[0] || entry) {

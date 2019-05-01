@@ -7,14 +7,14 @@ const {checkBrowserSupport} = require('../libraries/compat');
 const {
   mode,
   browserslist,
-  export: exportConfig,
+  export: exportConfig
 } = require('../libraries/config');
 const {getCSSStatements, parseCSS} = require('../libraries/css');
 const {readFile, writeFile} = require('../libraries/files');
 const {generateReport} = require('../libraries/report');
 const {printLn} = require('../libraries/utils');
 
-const firefly = (filePath) => {
+const firefly = filePath => {
   const fileString = readFile(filePath);
   const parsedCSS = parseCSS(fileString);
   const cssStatements = getCSSStatements(parsedCSS);
@@ -24,46 +24,47 @@ const firefly = (filePath) => {
   return {browserscope, browserSupport, generatedReport};
 };
 
-const getExportAndReport = (filePaths) => {
+const getExportAndReport = filePaths => {
   return filePaths.reduce(
-      (acc, filePath) => {
-        const {browserscope, browserSupport, generatedReport} = firefly(
-            filePath
-        );
+    (acc, filePath) => {
+      const {browserscope, browserSupport, generatedReport} = firefly(filePath);
 
-        acc.e.push({
-          filePath: `${process.cwd()}/${filePath}`,
-          browserscope,
-          issues: browserSupport,
-        });
-        acc.r.push(generatedReport);
-        return acc;
-      },
-      {e: [], r: []}
+      acc.e.push({
+        filePath: `${process.cwd()}/${filePath}`,
+        browserscope,
+        issues: browserSupport
+      });
+      acc.r.push(generatedReport);
+      return acc;
+    },
+    {e: [], r: []}
   );
 };
 
 module.exports = (filePaths, args) => {
-  if (typeof filePaths === 'string') filePaths = [filePaths];
+  if (typeof filePaths === 'string') {
+    filePaths = [filePaths];
+  }
+
   if (args.watch || mode === 'watch') {
     let reportLineCount = 0;
     const watchingNotification = `
 ${
-  'export' in args || mode === 'export'
-    ? chalk.yellow(
-        '\n[firefly] warning: "--export" is not supported in watch-mode'
-    )
-    : ''
+  'export' in args || mode === 'export' ?
+    chalk.yellow(
+      '\n[firefly] warning: "--export" is not supported in watch-mode'
+    ) :
+    ''
 }${
-      args.json || mode === 'json'
-        ? chalk.yellow(
-            '\n[firefly] warning: "--json" is not supported in watch-mode'
-        )
-        : ''
+  args.json || mode === 'json' ?
+    chalk.yellow(
+      '\n[firefly] warning: "--json" is not supported in watch-mode'
+    ) :
+    ''
 }
 ${chalk.cyan('[firefly] watching:')} ${filePaths
-    .join(', ')
-    .replace(/, ([^,]*)$/, ' & $1')}
+  .join(', ')
+  .replace(/, ([^,]*)$/, ' & $1')}
 `;
 
     const clearTerminal = () => {
@@ -80,24 +81,39 @@ ${chalk.cyan('[firefly] watching:')} ${filePaths
     };
 
     chokidar
-        .watch(filePaths, {awaitWriteFinish: false})
-        .on('ready', () => printReport())
-        .on('change', (path) => {
-          clearTerminal();
-          printReport();
-        });
+      .watch(filePaths, {awaitWriteFinish: false})
+      .on('ready', () => printReport())
+      .on('change', () => {
+        clearTerminal();
+        printReport();
+      });
   } else {
     const {e, r} = getExportAndReport(filePaths);
 
     if ('export' in args || mode === 'export') {
-      const json = JSON.stringify(e, null, 2);
       let exportPath =
         args.export ||
         path.join(exportConfig.path, exportConfig.filename || 'report.json');
-      if (exportPath.endsWith('/')) exportPath += 'report.json';
-      if (exportPath.startsWith('/')) exportPath = exportPath.substr(1);
-      if (!exportPath.toLowerCase().endsWith('.json')) exportPath += '.json';
-      args.json || mode === 'json' ? printLn(json) : printLn(r.join('\n\n'));
+      const json = JSON.stringify(e, null, 2);
+
+      if (exportPath.endsWith('/')) {
+        exportPath += 'report.json';
+      }
+
+      if (exportPath.startsWith('/')) {
+        exportPath = exportPath.substr(1);
+      }
+
+      if (!exportPath.toLowerCase().endsWith('.json')) {
+        exportPath += '.json';
+      }
+
+      if (args.json || mode === 'json') {
+        printLn(json);
+      } else {
+        printLn(r.join('\n\n'));
+      }
+
       writeFile(`${path.normalize(exportPath)}`, json);
     } else if (args.json || mode === 'json') {
       printLn(JSON.stringify(e, null, 2));

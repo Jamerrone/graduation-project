@@ -2,7 +2,7 @@ const browserslist = require('browserslist');
 
 const {printEr} = require('../libraries/utils');
 
-const getBrowserslist = (usersBrowserslist) => {
+const getBrowserslist = usersBrowserslist => {
   try {
     return formatBrowserslist(browserslist(usersBrowserslist));
   } catch (error) {
@@ -10,7 +10,8 @@ const getBrowserslist = (usersBrowserslist) => {
   }
 };
 
-const formatBrowserslist = (browserslist) => {
+const formatBrowserslist = browserslist => {
+  /* eslint-disable camelcase */
   const browsersDictionary = {
     and_chr: 'chrome_android',
     and_ff: 'firefox_android',
@@ -22,17 +23,18 @@ const formatBrowserslist = (browserslist) => {
     op_mob: 'opera_android',
     opera: 'opera',
     safari: 'safari',
-    samsung: 'samsunginternet_android',
+    samsung: 'samsunginternet_android'
   };
+  /* eslint-enable camelcase */
 
   return browserslist.reduce((acc, browser) => {
     const b = browser.split(' ');
     const browserName = b[0];
     let browserVersion = b[1];
 
-    browserVersion = browserVersion.includes('-')
-      ? browserVersion.split('-')[0]
-      : browserVersion;
+    browserVersion = browserVersion.includes('-') ?
+      browserVersion.split('-')[0] :
+      browserVersion;
 
     if (browsersDictionary[browserName]) {
       acc[browsersDictionary[browserName]] = Number(browserVersion);
@@ -43,5 +45,5 @@ const formatBrowserslist = (browserslist) => {
 };
 
 module.exports = {
-  getBrowserslist,
+  getBrowserslist
 };
