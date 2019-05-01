@@ -2,7 +2,7 @@ const csstree = require('css-tree');
 
 const {ignoreAtSupports, ignoreVendorPrefixes} = require('./config');
 
-const getCSSStatements = (cssNode) => {
+const getCSSStatements = cssNode => {
   const statements = {atrules: [], declarations: [], mediaFeatures: []};
   csstree.walk(cssNode, {
     enter(node) {
@@ -14,26 +14,33 @@ const getCSSStatements = (cssNode) => {
           statements.atrules.push(node);
         }
       }
+
       if (node.type === 'Declaration') {
-        const r = /\-(moz|o|webkit|ms|khtml)\-.+/;
-        if (ignoreVendorPrefixes && node.property.match(r)) return;
+        const r = /-(moz|o|webkit|ms|khtml)-.+/;
+        if (ignoreVendorPrefixes && node.property.match(r)) {
+          return;
+        }
+
         statements.declarations.push(node);
       }
-      if (node.type === 'MediaFeature') statements.mediaFeatures.push(node);
-    },
+
+      if (node.type === 'MediaFeature') {
+        statements.mediaFeatures.push(node);
+      }
+    }
   });
   return statements;
 };
 
-const parseCSS = (fileString) => {
+const parseCSS = fileString => {
   const parsedCSS = csstree.parse(fileString, {
     parseValue: false,
-    positions: true,
+    positions: true
   });
   return parsedCSS;
 };
 
 module.exports = {
   getCSSStatements,
-  parseCSS,
+  parseCSS
 };

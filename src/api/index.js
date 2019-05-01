@@ -4,11 +4,11 @@ const fs = require('fs');
 const path = require('path');
 const extend = require('extend');
 
-const load = (args) => {
-  let dir = undefined;
+const load = args => {
+  let dir;
   let result = {};
 
-  const processFilename = (fn) => {
+  const processFilename = fn => {
     const fp = path.join(dir, fn);
     let extra;
 

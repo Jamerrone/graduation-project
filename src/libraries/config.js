@@ -5,14 +5,14 @@ const defaultConfig = {
   entry: null,
   export: {
     filename: 'report.json',
-    path: './',
+    path: './'
   },
 
   browserslist: ['defaults'],
   disableFeedbackSystem: false,
   exclude: [],
   ignoreAtSupports: false,
-  ignoreVendorPrefixes: false,
+  ignoreVendorPrefixes: false
 };
 
 const getConfig = () => {
@@ -25,6 +25,7 @@ const getConfig = () => {
   } catch (error) {
     config = defaultConfig;
   }
+
   return config;
 };
 
