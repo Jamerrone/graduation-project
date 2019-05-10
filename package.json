@@ -30,12 +30,12 @@
   "dependencies": {
     "browserslist": "^4.5.5",
     "chalk": "^2.4.2",
-    "chokidar": "^2.1.5",
+    "chokidar": "^3.0.0",
     "cosmiconfig": "^5.2.0",
     "css-tree": "^1.0.0-alpha.29",
     "extend": "^3.0.2",
     "fast-glob": "^2.2.6",
-    "mdn-browser-compat-data": "0.0.77",
+    "mdn-browser-compat-data": "0.0.79",
     "minimist": "^1.2.0",
     "string-similarity": "^3.0.0"
   },
