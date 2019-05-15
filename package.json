@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/Jamerrone/graduation-project#readme",
   "dependencies": {
-    "browserslist": "^4.5.5",
+    "browserslist": "^4.6.0",
     "chalk": "^2.4.2",
     "chokidar": "^3.0.0",
-    "cosmiconfig": "^5.2.0",
+    "cosmiconfig": "^5.2.1",
     "css-tree": "^1.0.0-alpha.29",
     "extend": "^3.0.2",
     "fast-glob": "^2.2.6",
