@@ -28,14 +28,14 @@
   },
   "homepage": "https://github.com/Jamerrone/graduation-project#readme",
   "dependencies": {
-    "browserslist": "^4.6.0",
+    "browserslist": "^4.6.1",
     "chalk": "^2.4.2",
     "chokidar": "^3.0.0",
     "cosmiconfig": "^5.2.1",
     "css-tree": "^1.0.0-alpha.29",
     "extend": "^3.0.2",
     "fast-glob": "^2.2.7",
-    "mdn-browser-compat-data": "0.0.80",
+    "mdn-browser-compat-data": "0.0.81",
     "minimist": "^1.2.0",
     "string-similarity": "^3.0.0"
   },
