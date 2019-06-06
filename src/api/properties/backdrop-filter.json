@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "backdrop-filter": {
+      "notes": "Cross-browser Solution: https://mzl.la/2HYgMNn."
+    }
+  }
+}

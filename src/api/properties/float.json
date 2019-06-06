@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "float": {
+      "alternatives": ["inline-block"],
+      "notes": null
+    }
+  }
+}

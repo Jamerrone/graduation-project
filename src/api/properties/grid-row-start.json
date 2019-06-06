@@ -1,7 +1,7 @@
 {
   "properties": {
     "grid-row-start": {
-      "alternatives": ["flex", "float"],
+      "alternatives": ["flex", "float", "inline-block"],
       "notes": null
     }
   }

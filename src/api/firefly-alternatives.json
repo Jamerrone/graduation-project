@@ -1,149 +1,180 @@
 {
   "properties": {
+    "backdrop-filter": {
+      "notes": "Cross-browser Solution: https://mzl.la/2HYgMNn."
+    },
     "flex-basis": {
       "alternatives": [
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "flex-direction": {
       "alternatives": [
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "flex-flow": {
       "alternatives": [
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "flex-grow": {
       "alternatives": [
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "flex-shrink": {
       "alternatives": [
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "flex-wrap": {
       "alternatives": [
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "flex": {
       "alternatives": [
-        "float"
+        "float",
+        "inline-block"
+      ],
+      "notes": null
+    },
+    "float": {
+      "alternatives": [
+        "inline-block"
       ],
       "notes": null
     },
     "grid-area": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-auto-columns": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-auto-flow": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-auto-rows": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-column-end": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-column-start": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-column": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-row-end": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-row-start": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-row": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-template-areas": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-template-columns": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-template-rows": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid-template": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
     "grid": {
       "alternatives": [
         "flex",
-        "float"
+        "float",
+        "inline-block"
       ],
       "notes": null
     },
@@ -164,6 +195,9 @@
         ]
       ],
       "notes": "You could also try cropping the image."
+    },
+    "scroll-behavior": {
+      "notes": "Cross-browser Solution: https://mzl.la/2Ij4fTv."
     }
   }
 }

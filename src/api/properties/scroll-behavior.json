@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "scroll-behavior": {
+      "notes": "Cross-browser Solution: https://mzl.la/2Ij4fTv."
+    }
+  }
+}
