@@ -35,7 +35,7 @@
     "css-tree": "^1.0.0-alpha.29",
     "extend": "^3.0.2",
     "fast-glob": "^2.2.7",
-    "mdn-browser-compat-data": "0.0.82",
+    "mdn-browser-compat-data": "0.0.83",
     "minimist": "^1.2.0",
     "string-similarity": "^3.0.0"
   },
