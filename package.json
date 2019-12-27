@@ -1,6 +1,6 @@
 {
   "name": "project-firefly",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "A CSS Support Validator.",
   "main": "./src/index.js",
   "bin": {
@@ -28,19 +28,19 @@
   },
   "homepage": "https://github.com/Jamerrone/graduation-project#readme",
   "dependencies": {
-    "browserslist": "^4.6.3",
-    "chalk": "^2.4.2",
-    "chokidar": "^3.0.1",
-    "cosmiconfig": "^5.2.1",
-    "css-tree": "^1.0.0-alpha.29",
-    "extend": "^3.0.2",
-    "fast-glob": "^3.0.1",
-    "mdn-browser-compat-data": "0.0.84",
-    "minimist": "^1.2.0",
-    "string-similarity": "^3.0.0"
+    "browserslist": "4.8.2",
+    "chalk": "3.0.0",
+    "chokidar": "3.3.1",
+    "cosmiconfig": "6.0.0",
+    "css-tree": "1.0.0-alpha.39",
+    "extend": "3.0.2",
+    "fast-glob": "3.1.1",
+    "mdn-browser-compat-data": "1.0.3",
+    "minimist": "1.2.0",
+    "string-similarity": "3.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-xo-space": "^0.21.0"
+    "eslint": "6.8.0",
+    "eslint-config-xo-space": "0.22.0"
   }
 }
